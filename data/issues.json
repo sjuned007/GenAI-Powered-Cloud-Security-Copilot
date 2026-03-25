@@ -1,0 +1,3848 @@
+[
+  {
+    "resource_id": "sg-0084",
+    "resource_type": "security_group",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "SG_OPEN_POSTGRESQL",
+    "description": "Security group sg-0084 (sg-custom-0084) allows inbound PostgreSQL (port 5432) from 0.0.0.0/0",
+    "remediation": "Restrict port 5432 (PostgreSQL) to specific trusted IP ranges. Use a bastion host or VPN rather than direct public access. Apply least-privilege inbound rules.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "port": 5432,
+      "service": "PostgreSQL",
+      "cidr_ipv4": "0.0.0.0/0",
+      "cidr_ipv6": null
+    }
+  },
+  {
+    "resource_id": "sg-0048",
+    "resource_type": "security_group",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "SG_OPEN_RDP",
+    "description": "Security group sg-0048 (sg-custom-0048) allows inbound RDP (port 3389) from 0.0.0.0/0",
+    "remediation": "Restrict port 3389 (RDP) to specific trusted IP ranges. Use a bastion host or VPN rather than direct public access. Apply least-privilege inbound rules.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "eu-west-1",
+    "extra": {
+      "port": 3389,
+      "service": "RDP",
+      "cidr_ipv4": "0.0.0.0/0",
+      "cidr_ipv6": null
+    }
+  },
+  {
+    "resource_id": "sg-0077",
+    "resource_type": "security_group",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "SG_OPEN_REDIS",
+    "description": "Security group sg-0077 (sg-custom-0077) allows inbound Redis (port 6379) from 0.0.0.0/0",
+    "remediation": "Restrict port 6379 (Redis) to specific trusted IP ranges. Use a bastion host or VPN rather than direct public access. Apply least-privilege inbound rules.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "port": 6379,
+      "service": "Redis",
+      "cidr_ipv4": "0.0.0.0/0",
+      "cidr_ipv6": null
+    }
+  },
+  {
+    "resource_id": "sg-0008",
+    "resource_type": "security_group",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "SG_ALLOW_ALL_INBOUND",
+    "description": "Security group sg-0008 (sg-custom-0008) allows ALL inbound traffic from the internet (protocol=-1, 0.0.0.0/0)",
+    "remediation": "Remove the catch-all inbound rule immediately. Replace with explicit, minimal rules for each required port/service.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "rule": {
+        "from_port": -1,
+        "to_port": -1,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": null
+      }
+    }
+  },
+  {
+    "resource_id": "sg-0006",
+    "resource_type": "security_group",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "SG_OPEN_POSTGRESQL",
+    "description": "Security group sg-0006 (sg-custom-0006) allows inbound PostgreSQL (port 5432) from 0.0.0.0/0",
+    "remediation": "Restrict port 5432 (PostgreSQL) to specific trusted IP ranges. Use a bastion host or VPN rather than direct public access. Apply least-privilege inbound rules.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "eu-west-1",
+    "extra": {
+      "port": 5432,
+      "service": "PostgreSQL",
+      "cidr_ipv4": "0.0.0.0/0",
+      "cidr_ipv6": null
+    }
+  },
+  {
+    "resource_id": "sg-0006",
+    "resource_type": "security_group",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "SG_OPEN_SSH",
+    "description": "Security group sg-0006 (sg-custom-0006) allows inbound SSH (port 22) from 0.0.0.0/0 / ::/0",
+    "remediation": "Restrict port 22 (SSH) to specific trusted IP ranges. Use a bastion host or VPN rather than direct public access. Apply least-privilege inbound rules.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "eu-west-1",
+    "extra": {
+      "port": 22,
+      "service": "SSH",
+      "cidr_ipv4": "0.0.0.0/0",
+      "cidr_ipv6": "::/0"
+    }
+  },
+  {
+    "resource_id": "sg-0018",
+    "resource_type": "security_group",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "SG_OPEN_MONGODB",
+    "description": "Security group sg-0018 (sg-custom-0018) allows inbound MongoDB (port 27017) from 0.0.0.0/0",
+    "remediation": "Restrict port 27017 (MongoDB) to specific trusted IP ranges. Use a bastion host or VPN rather than direct public access. Apply least-privilege inbound rules.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "ap-south-1",
+    "extra": {
+      "port": 27017,
+      "service": "MongoDB",
+      "cidr_ipv4": "0.0.0.0/0",
+      "cidr_ipv6": null
+    }
+  },
+  {
+    "resource_id": "s3-0000",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "S3_PUBLIC_BUCKET",
+    "description": "S3 bucket \"bucket-logs-0000\" is publicly accessible and contains PII data",
+    "remediation": "Enable \"Block all public access\" in the S3 console, set bucket ACL to private, and review bucket policies. Immediately audit data exposure given PII flag.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "acl": "public-read",
+      "public_access_block": false,
+      "contains_pii": true
+    }
+  },
+  {
+    "resource_id": "sg-0092",
+    "resource_type": "security_group",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "SG_OPEN_MONGODB",
+    "description": "Security group sg-0092 (sg-custom-0092) allows inbound MongoDB (port 27017) from 0.0.0.0/0",
+    "remediation": "Restrict port 27017 (MongoDB) to specific trusted IP ranges. Use a bastion host or VPN rather than direct public access. Apply least-privilege inbound rules.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-south-1",
+    "extra": {
+      "port": 27017,
+      "service": "MongoDB",
+      "cidr_ipv4": "0.0.0.0/0",
+      "cidr_ipv6": null
+    }
+  },
+  {
+    "resource_id": "s3-0021",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "COM_HIGH_SENSITIVITY_UNENCRYPTED",
+    "description": "s3_bucket s3-0021 is tagged as high-sensitivity but has no encryption configured",
+    "remediation": "Immediately enable SSE-KMS encryption. Review access policies and audit who has accessed this resource.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-south-1",
+    "extra": {
+      "data_sensitivity": "high"
+    }
+  },
+  {
+    "resource_id": "sg-0034",
+    "resource_type": "security_group",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "SG_OPEN_MONGODB",
+    "description": "Security group sg-0034 (sg-custom-0034) allows inbound MongoDB (port 27017) from 0.0.0.0/0",
+    "remediation": "Restrict port 27017 (MongoDB) to specific trusted IP ranges. Use a bastion host or VPN rather than direct public access. Apply least-privilege inbound rules.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "port": 27017,
+      "service": "MongoDB",
+      "cidr_ipv4": "0.0.0.0/0",
+      "cidr_ipv6": null
+    }
+  },
+  {
+    "resource_id": "sg-0069",
+    "resource_type": "security_group",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "SG_OPEN_SSH",
+    "description": "Security group sg-0069 (sg-custom-0069) allows inbound SSH (port 22) from 0.0.0.0/0",
+    "remediation": "Restrict port 22 (SSH) to specific trusted IP ranges. Use a bastion host or VPN rather than direct public access. Apply least-privilege inbound rules.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {
+      "port": 22,
+      "service": "SSH",
+      "cidr_ipv4": "0.0.0.0/0",
+      "cidr_ipv6": null
+    }
+  },
+  {
+    "resource_id": "sg-0095",
+    "resource_type": "security_group",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "SG_OPEN_SSH",
+    "description": "Security group sg-0095 (sg-custom-0095) allows inbound SSH (port 22) from 0.0.0.0/0",
+    "remediation": "Restrict port 22 (SSH) to specific trusted IP ranges. Use a bastion host or VPN rather than direct public access. Apply least-privilege inbound rules.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-east-1",
+    "extra": {
+      "port": 22,
+      "service": "SSH",
+      "cidr_ipv4": "0.0.0.0/0",
+      "cidr_ipv6": null
+    }
+  },
+  {
+    "resource_id": "sg-0042",
+    "resource_type": "security_group",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "SG_OPEN_SSH",
+    "description": "Security group sg-0042 (sg-custom-0042) allows inbound SSH (port 22) from 0.0.0.0/0",
+    "remediation": "Restrict port 22 (SSH) to specific trusted IP ranges. Use a bastion host or VPN rather than direct public access. Apply least-privilege inbound rules.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "port": 22,
+      "service": "SSH",
+      "cidr_ipv4": "0.0.0.0/0",
+      "cidr_ipv6": null
+    }
+  },
+  {
+    "resource_id": "s3-0013",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "COM_HIGH_SENSITIVITY_UNENCRYPTED",
+    "description": "s3_bucket s3-0013 is tagged as high-sensitivity but has no encryption configured",
+    "remediation": "Immediately enable SSE-KMS encryption. Review access policies and audit who has accessed this resource.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-southeast-1",
+    "extra": {
+      "data_sensitivity": "high"
+    }
+  },
+  {
+    "resource_id": "s3-0072",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "COM_HIGH_SENSITIVITY_UNENCRYPTED",
+    "description": "s3_bucket s3-0072 is tagged as high-sensitivity but has no encryption configured",
+    "remediation": "Immediately enable SSE-KMS encryption. Review access policies and audit who has accessed this resource.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-southeast-1",
+    "extra": {
+      "data_sensitivity": "high"
+    }
+  },
+  {
+    "resource_id": "s3-0086",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "COM_HIGH_SENSITIVITY_UNENCRYPTED",
+    "description": "s3_bucket s3-0086 is tagged as high-sensitivity but has no encryption configured",
+    "remediation": "Immediately enable SSE-KMS encryption. Review access policies and audit who has accessed this resource.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "eu-west-1",
+    "extra": {
+      "data_sensitivity": "high"
+    }
+  },
+  {
+    "resource_id": "sg-0007",
+    "resource_type": "security_group",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "SG_OPEN_RDP",
+    "description": "Security group sg-0007 (sg-custom-0007) allows inbound RDP (port 3389) from 0.0.0.0/0",
+    "remediation": "Restrict port 3389 (RDP) to specific trusted IP ranges. Use a bastion host or VPN rather than direct public access. Apply least-privilege inbound rules.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "us-east-1",
+    "extra": {
+      "port": 3389,
+      "service": "RDP",
+      "cidr_ipv4": "0.0.0.0/0",
+      "cidr_ipv6": null
+    }
+  },
+  {
+    "resource_id": "sg-0082",
+    "resource_type": "security_group",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "SG_OPEN_POSTGRESQL",
+    "description": "Security group sg-0082 (sg-custom-0082) allows inbound PostgreSQL (port 5432) from 0.0.0.0/0",
+    "remediation": "Restrict port 5432 (PostgreSQL) to specific trusted IP ranges. Use a bastion host or VPN rather than direct public access. Apply least-privilege inbound rules.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-southeast-1",
+    "extra": {
+      "port": 5432,
+      "service": "PostgreSQL",
+      "cidr_ipv4": "0.0.0.0/0",
+      "cidr_ipv6": null
+    }
+  },
+  {
+    "resource_id": "s3-0096",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "COM_HIGH_SENSITIVITY_UNENCRYPTED",
+    "description": "s3_bucket s3-0096 is tagged as high-sensitivity but has no encryption configured",
+    "remediation": "Immediately enable SSE-KMS encryption. Review access policies and audit who has accessed this resource.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {
+      "data_sensitivity": "high"
+    }
+  },
+  {
+    "resource_id": "sg-0025",
+    "resource_type": "security_group",
+    "issue_type": "misconfiguration",
+    "severity": "critical",
+    "rule_id": "SG_OPEN_MYSQL_MARIADB",
+    "description": "Security group sg-0025 (sg-custom-0025) allows inbound MySQL/MariaDB (port 3306) from 0.0.0.0/0",
+    "remediation": "Restrict port 3306 (MySQL/MariaDB) to specific trusted IP ranges. Use a bastion host or VPN rather than direct public access. Apply least-privilege inbound rules.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {
+      "port": 3306,
+      "service": "MySQL/MariaDB",
+      "cidr_ipv4": "0.0.0.0/0",
+      "cidr_ipv6": null
+    }
+  },
+  {
+    "resource_id": "vol-0074",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0074 (50 GB sc1) is unattached for 63 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 143.72,
+    "data_sensitivity": "low",
+    "region": "us-east-1",
+    "extra": {
+      "size_gb": 50,
+      "volume_type": "sc1",
+      "last_attached_days_ago": 63
+    }
+  },
+  {
+    "resource_id": "vol-0003",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0003 (1000 GB sc1) is unattached for 117 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 138.5,
+    "data_sensitivity": "low",
+    "region": "us-west-2",
+    "extra": {
+      "size_gb": 1000,
+      "volume_type": "sc1",
+      "last_attached_days_ago": 117
+    }
+  },
+  {
+    "resource_id": "vol-0003",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_OVERSIZED_UNATTACHED",
+    "description": "EBS volume vol-0003 is oversized (1000 GB) and unattached \u2014 significant wasted spend",
+    "remediation": "Review whether the full capacity is required. Snapshot and delete, or right-size before re-attaching.",
+    "waste_cost": 138.5,
+    "data_sensitivity": "low",
+    "region": "us-west-2",
+    "extra": {
+      "size_gb": 1000
+    }
+  },
+  {
+    "resource_id": "vol-0028",
+    "resource_type": "ebs_volume",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "EBS_UNENCRYPTED",
+    "description": "EBS volume vol-0028 is not encrypted at rest",
+    "remediation": "Create an encrypted snapshot of this volume and restore it as a new encrypted volume. Enable account-level EBS encryption by default to prevent future unencrypted volumes.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {
+      "encrypted": false,
+      "kms_key_id": null
+    }
+  },
+  {
+    "resource_id": "vol-0026",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0026 (20 GB st1) is unattached for 308 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 150.77,
+    "data_sensitivity": "medium",
+    "region": "ap-southeast-1",
+    "extra": {
+      "size_gb": 20,
+      "volume_type": "st1",
+      "last_attached_days_ago": 308
+    }
+  },
+  {
+    "resource_id": "vol-0070",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0070 (500 GB io1) is unattached for 285 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 17.85,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "size_gb": 500,
+      "volume_type": "io1",
+      "last_attached_days_ago": 285
+    }
+  },
+  {
+    "resource_id": "vol-0078",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0078 (500 GB io1) is unattached for 123 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 158.76,
+    "data_sensitivity": "low",
+    "region": "eu-west-1",
+    "extra": {
+      "size_gb": 500,
+      "volume_type": "io1",
+      "last_attached_days_ago": 123
+    }
+  },
+  {
+    "resource_id": "s3-0055",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "S3_PUBLIC_BUCKET",
+    "description": "S3 bucket \"bucket-data-0055\" is publicly accessible",
+    "remediation": "Enable \"Block all public access\" in the S3 console, set bucket ACL to private, and review bucket policies. ",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "ap-southeast-1",
+    "extra": {
+      "acl": "public-read",
+      "public_access_block": false,
+      "contains_pii": false
+    }
+  },
+  {
+    "resource_id": "vol-0031",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0031 (50 GB io1) is unattached for 333 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 89.92,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "size_gb": 50,
+      "volume_type": "io1",
+      "last_attached_days_ago": 333
+    }
+  },
+  {
+    "resource_id": "vol-0031",
+    "resource_type": "ebs_volume",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "EBS_UNENCRYPTED",
+    "description": "EBS volume vol-0031 is not encrypted at rest",
+    "remediation": "Create an encrypted snapshot of this volume and restore it as a new encrypted volume. Enable account-level EBS encryption by default to prevent future unencrypted volumes.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "encrypted": false,
+      "kms_key_id": null
+    }
+  },
+  {
+    "resource_id": "vol-0035",
+    "resource_type": "ebs_volume",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "EBS_UNENCRYPTED",
+    "description": "EBS volume vol-0035 is not encrypted at rest",
+    "remediation": "Create an encrypted snapshot of this volume and restore it as a new encrypted volume. Enable account-level EBS encryption by default to prevent future unencrypted volumes.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "encrypted": false,
+      "kms_key_id": null
+    }
+  },
+  {
+    "resource_id": "vol-0094",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0094 (200 GB sc1) is unattached for 260 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 120.78,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "size_gb": 200,
+      "volume_type": "sc1",
+      "last_attached_days_ago": 260
+    }
+  },
+  {
+    "resource_id": "vol-0094",
+    "resource_type": "ebs_volume",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "EBS_UNENCRYPTED",
+    "description": "EBS volume vol-0094 is not encrypted at rest",
+    "remediation": "Create an encrypted snapshot of this volume and restore it as a new encrypted volume. Enable account-level EBS encryption by default to prevent future unencrypted volumes.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "encrypted": false,
+      "kms_key_id": null
+    }
+  },
+  {
+    "resource_id": "s3-0009",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "S3_NO_ENCRYPTION",
+    "description": "S3 bucket \"bucket-backups-0009\" has no server-side encryption",
+    "remediation": "Enable SSE-S3 (AES256) as a minimum, or SSE-KMS for stricter key management. Apply a bucket policy to deny unencrypted uploads.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {
+      "encryption": null
+    }
+  },
+  {
+    "resource_id": "vol-0065",
+    "resource_type": "ebs_volume",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "EBS_UNENCRYPTED",
+    "description": "EBS volume vol-0065 is not encrypted at rest",
+    "remediation": "Create an encrypted snapshot of this volume and restore it as a new encrypted volume. Enable account-level EBS encryption by default to prevent future unencrypted volumes.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "encrypted": false,
+      "kms_key_id": null
+    }
+  },
+  {
+    "resource_id": "s3-0014",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "S3_NO_ENCRYPTION",
+    "description": "S3 bucket \"bucket-assets-0014\" has no server-side encryption",
+    "remediation": "Enable SSE-S3 (AES256) as a minimum, or SSE-KMS for stricter key management. Apply a bucket policy to deny unencrypted uploads.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "encryption": null
+    }
+  },
+  {
+    "resource_id": "vol-0066",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0066 (100 GB gp3) is unattached for 124 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 22.19,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "size_gb": 100,
+      "volume_type": "gp3",
+      "last_attached_days_ago": 124
+    }
+  },
+  {
+    "resource_id": "vol-0015",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0015 (50 GB sc1) is unattached for 68 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 186.69,
+    "data_sensitivity": "high",
+    "region": "eu-west-1",
+    "extra": {
+      "size_gb": 50,
+      "volume_type": "sc1",
+      "last_attached_days_ago": 68
+    }
+  },
+  {
+    "resource_id": "vol-0090",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0090 (100 GB gp3) is unattached for 315 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 14.87,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "size_gb": 100,
+      "volume_type": "gp3",
+      "last_attached_days_ago": 315
+    }
+  },
+  {
+    "resource_id": "vol-0090",
+    "resource_type": "ebs_volume",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "EBS_UNENCRYPTED",
+    "description": "EBS volume vol-0090 is not encrypted at rest",
+    "remediation": "Create an encrypted snapshot of this volume and restore it as a new encrypted volume. Enable account-level EBS encryption by default to prevent future unencrypted volumes.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "encrypted": false,
+      "kms_key_id": null
+    }
+  },
+  {
+    "resource_id": "vol-0005",
+    "resource_type": "ebs_volume",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "EBS_UNENCRYPTED",
+    "description": "EBS volume vol-0005 is not encrypted at rest",
+    "remediation": "Create an encrypted snapshot of this volume and restore it as a new encrypted volume. Enable account-level EBS encryption by default to prevent future unencrypted volumes.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {
+      "encrypted": false,
+      "kms_key_id": null
+    }
+  },
+  {
+    "resource_id": "s3-0020",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "S3_PUBLIC_BUCKET",
+    "description": "S3 bucket \"bucket-assets-0020\" is publicly accessible",
+    "remediation": "Enable \"Block all public access\" in the S3 console, set bucket ACL to private, and review bucket policies. ",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-south-1",
+    "extra": {
+      "acl": "public-read",
+      "public_access_block": false,
+      "contains_pii": false
+    }
+  },
+  {
+    "resource_id": "vol-0032",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0032 (8 GB st1) is unattached for 172 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 124.01,
+    "data_sensitivity": "low",
+    "region": "ap-southeast-1",
+    "extra": {
+      "size_gb": 8,
+      "volume_type": "st1",
+      "last_attached_days_ago": 172
+    }
+  },
+  {
+    "resource_id": "vol-0032",
+    "resource_type": "ebs_volume",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "EBS_UNENCRYPTED",
+    "description": "EBS volume vol-0032 is not encrypted at rest",
+    "remediation": "Create an encrypted snapshot of this volume and restore it as a new encrypted volume. Enable account-level EBS encryption by default to prevent future unencrypted volumes.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "ap-southeast-1",
+    "extra": {
+      "encrypted": false,
+      "kms_key_id": null
+    }
+  },
+  {
+    "resource_id": "s3-0099",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "S3_PUBLIC_BUCKET",
+    "description": "S3 bucket \"bucket-backups-0099\" is publicly accessible",
+    "remediation": "Enable \"Block all public access\" in the S3 console, set bucket ACL to private, and review bucket policies. ",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "us-west-2",
+    "extra": {
+      "acl": "public-read",
+      "public_access_block": false,
+      "contains_pii": false
+    }
+  },
+  {
+    "resource_id": "vol-0039",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0039 (500 GB sc1) is unattached for 115 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 87.9,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "size_gb": 500,
+      "volume_type": "sc1",
+      "last_attached_days_ago": 115
+    }
+  },
+  {
+    "resource_id": "vol-0085",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0085 (100 GB st1) is unattached for 188 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 75.37,
+    "data_sensitivity": "low",
+    "region": "us-east-1",
+    "extra": {
+      "size_gb": 100,
+      "volume_type": "st1",
+      "last_attached_days_ago": 188
+    }
+  },
+  {
+    "resource_id": "vol-0085",
+    "resource_type": "ebs_volume",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "EBS_UNENCRYPTED",
+    "description": "EBS volume vol-0085 is not encrypted at rest",
+    "remediation": "Create an encrypted snapshot of this volume and restore it as a new encrypted volume. Enable account-level EBS encryption by default to prevent future unencrypted volumes.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "us-east-1",
+    "extra": {
+      "encrypted": false,
+      "kms_key_id": null
+    }
+  },
+  {
+    "resource_id": "vol-0043",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0043 (8 GB sc1) is unattached for 282 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 143.41,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {
+      "size_gb": 8,
+      "volume_type": "sc1",
+      "last_attached_days_ago": 282
+    }
+  },
+  {
+    "resource_id": "vol-0043",
+    "resource_type": "ebs_volume",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "EBS_UNENCRYPTED",
+    "description": "EBS volume vol-0043 is not encrypted at rest",
+    "remediation": "Create an encrypted snapshot of this volume and restore it as a new encrypted volume. Enable account-level EBS encryption by default to prevent future unencrypted volumes.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {
+      "encrypted": false,
+      "kms_key_id": null
+    }
+  },
+  {
+    "resource_id": "vol-0075",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0075 (20 GB sc1) is unattached for 191 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 50.98,
+    "data_sensitivity": "medium",
+    "region": "eu-west-1",
+    "extra": {
+      "size_gb": 20,
+      "volume_type": "sc1",
+      "last_attached_days_ago": 191
+    }
+  },
+  {
+    "resource_id": "vol-0075",
+    "resource_type": "ebs_volume",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "EBS_UNENCRYPTED",
+    "description": "EBS volume vol-0075 is not encrypted at rest",
+    "remediation": "Create an encrypted snapshot of this volume and restore it as a new encrypted volume. Enable account-level EBS encryption by default to prevent future unencrypted volumes.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "eu-west-1",
+    "extra": {
+      "encrypted": false,
+      "kms_key_id": null
+    }
+  },
+  {
+    "resource_id": "s3-0047",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "S3_PUBLIC_BUCKET",
+    "description": "S3 bucket \"bucket-reports-0047\" is publicly accessible",
+    "remediation": "Enable \"Block all public access\" in the S3 console, set bucket ACL to private, and review bucket policies. ",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "ap-south-1",
+    "extra": {
+      "acl": "public-read",
+      "public_access_block": false,
+      "contains_pii": false
+    }
+  },
+  {
+    "resource_id": "s3-0000",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "S3_NO_ENCRYPTION",
+    "description": "S3 bucket \"bucket-logs-0000\" has no server-side encryption",
+    "remediation": "Enable SSE-S3 (AES256) as a minimum, or SSE-KMS for stricter key management. Apply a bucket policy to deny unencrypted uploads.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "encryption": null
+    }
+  },
+  {
+    "resource_id": "vol-0098",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0098 (200 GB io1) is unattached for 138 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 44.4,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "size_gb": 200,
+      "volume_type": "io1",
+      "last_attached_days_ago": 138
+    }
+  },
+  {
+    "resource_id": "vol-0089",
+    "resource_type": "ebs_volume",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "EBS_UNENCRYPTED",
+    "description": "EBS volume vol-0089 is not encrypted at rest",
+    "remediation": "Create an encrypted snapshot of this volume and restore it as a new encrypted volume. Enable account-level EBS encryption by default to prevent future unencrypted volumes.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-south-1",
+    "extra": {
+      "encrypted": false,
+      "kms_key_id": null
+    }
+  },
+  {
+    "resource_id": "vol-0010",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0010 (20 GB io1) is unattached for 229 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 42.36,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {
+      "size_gb": 20,
+      "volume_type": "io1",
+      "last_attached_days_ago": 229
+    }
+  },
+  {
+    "resource_id": "vol-0093",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0093 (8 GB io1) is unattached for 256 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 122.48,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "size_gb": 8,
+      "volume_type": "io1",
+      "last_attached_days_ago": 256
+    }
+  },
+  {
+    "resource_id": "s3-0024",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "S3_PUBLIC_BUCKET",
+    "description": "S3 bucket \"bucket-logs-0024\" is publicly accessible",
+    "remediation": "Enable \"Block all public access\" in the S3 console, set bucket ACL to private, and review bucket policies. ",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-southeast-1",
+    "extra": {
+      "acl": "public-read",
+      "public_access_block": false,
+      "contains_pii": false
+    }
+  },
+  {
+    "resource_id": "vol-0067",
+    "resource_type": "ebs_volume",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "EBS_UNENCRYPTED",
+    "description": "EBS volume vol-0067 is not encrypted at rest",
+    "remediation": "Create an encrypted snapshot of this volume and restore it as a new encrypted volume. Enable account-level EBS encryption by default to prevent future unencrypted volumes.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "us-west-2",
+    "extra": {
+      "encrypted": false,
+      "kms_key_id": null
+    }
+  },
+  {
+    "resource_id": "vol-0038",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0038 (20 GB io1) is unattached for 38 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 51.77,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {
+      "size_gb": 20,
+      "volume_type": "io1",
+      "last_attached_days_ago": 38
+    }
+  },
+  {
+    "resource_id": "s3-0001",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "S3_PUBLIC_BUCKET",
+    "description": "S3 bucket \"bucket-data-0001\" is publicly accessible",
+    "remediation": "Enable \"Block all public access\" in the S3 console, set bucket ACL to private, and review bucket policies. ",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "us-east-1",
+    "extra": {
+      "acl": "public-read",
+      "public_access_block": false,
+      "contains_pii": false
+    }
+  },
+  {
+    "resource_id": "vol-0063",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0063 (100 GB gp3) is unattached for 139 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 14.7,
+    "data_sensitivity": "high",
+    "region": "ap-southeast-1",
+    "extra": {
+      "size_gb": 100,
+      "volume_type": "gp3",
+      "last_attached_days_ago": 139
+    }
+  },
+  {
+    "resource_id": "s3-0053",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "S3_NO_ENCRYPTION",
+    "description": "S3 bucket \"bucket-reports-0053\" has no server-side encryption",
+    "remediation": "Enable SSE-S3 (AES256) as a minimum, or SSE-KMS for stricter key management. Apply a bucket policy to deny unencrypted uploads.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {
+      "encryption": null
+    }
+  },
+  {
+    "resource_id": "vol-0004",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0004 (200 GB st1) is unattached for 287 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 56.65,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "size_gb": 200,
+      "volume_type": "st1",
+      "last_attached_days_ago": 287
+    }
+  },
+  {
+    "resource_id": "s3-0029",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "S3_NO_ENCRYPTION",
+    "description": "S3 bucket \"bucket-reports-0029\" has no server-side encryption",
+    "remediation": "Enable SSE-S3 (AES256) as a minimum, or SSE-KMS for stricter key management. Apply a bucket policy to deny unencrypted uploads.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-south-1",
+    "extra": {
+      "encryption": null
+    }
+  },
+  {
+    "resource_id": "vol-0073",
+    "resource_type": "ebs_volume",
+    "issue_type": "misconfiguration",
+    "severity": "high",
+    "rule_id": "EBS_UNENCRYPTED",
+    "description": "EBS volume vol-0073 is not encrypted at rest",
+    "remediation": "Create an encrypted snapshot of this volume and restore it as a new encrypted volume. Enable account-level EBS encryption by default to prevent future unencrypted volumes.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "us-west-2",
+    "extra": {
+      "encrypted": false,
+      "kms_key_id": null
+    }
+  },
+  {
+    "resource_id": "vol-0097",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "high",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0097 (50 GB st1) is unattached for 140 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 98.56,
+    "data_sensitivity": "low",
+    "region": "eu-west-1",
+    "extra": {
+      "size_gb": 50,
+      "volume_type": "st1",
+      "last_attached_days_ago": 140
+    }
+  },
+  {
+    "resource_id": "vol-0028",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "medium",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0028 (50 GB gp2) is unattached for 26 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 8.78,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {
+      "size_gb": 50,
+      "volume_type": "gp2",
+      "last_attached_days_ago": 26
+    }
+  },
+  {
+    "resource_id": "vol-0080",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "medium",
+    "rule_id": "EBS_NO_SNAPSHOT",
+    "description": "EBS volume vol-0080 has no associated snapshot / backup",
+    "remediation": "Create a snapshot immediately and set up an AWS Backup plan or Data Lifecycle Manager (DLM) policy for automated daily snapshots.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "vol-0035",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "medium",
+    "rule_id": "EBS_NO_SNAPSHOT",
+    "description": "EBS volume vol-0035 has no associated snapshot / backup",
+    "remediation": "Create a snapshot immediately and set up an AWS Backup plan or Data Lifecycle Manager (DLM) policy for automated daily snapshots.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "vol-0079",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "medium",
+    "rule_id": "EBS_NO_SNAPSHOT",
+    "description": "EBS volume vol-0079 has no associated snapshot / backup",
+    "remediation": "Create a snapshot immediately and set up an AWS Backup plan or Data Lifecycle Manager (DLM) policy for automated daily snapshots.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "us-east-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "vol-0033",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "medium",
+    "rule_id": "EBS_NO_SNAPSHOT",
+    "description": "EBS volume vol-0033 has no associated snapshot / backup",
+    "remediation": "Create a snapshot immediately and set up an AWS Backup plan or Data Lifecycle Manager (DLM) policy for automated daily snapshots.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "vol-0065",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "medium",
+    "rule_id": "EBS_NO_SNAPSHOT",
+    "description": "EBS volume vol-0065 has no associated snapshot / backup",
+    "remediation": "Create a snapshot immediately and set up an AWS Backup plan or Data Lifecycle Manager (DLM) policy for automated daily snapshots.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0030",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_ENCRYPTION",
+    "description": "S3 bucket \"bucket-logs-0030\" has no server-side encryption",
+    "remediation": "Enable SSE-S3 (AES256) as a minimum, or SSE-KMS for stricter key management. Apply a bucket policy to deny unencrypted uploads.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "us-west-2",
+    "extra": {
+      "encryption": null
+    }
+  },
+  {
+    "resource_id": "s3-0040",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_ENCRYPTION",
+    "description": "S3 bucket \"bucket-archive-0040\" has no server-side encryption",
+    "remediation": "Enable SSE-S3 (AES256) as a minimum, or SSE-KMS for stricter key management. Apply a bucket policy to deny unencrypted uploads.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {
+      "encryption": null
+    }
+  },
+  {
+    "resource_id": "vol-0012",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "medium",
+    "rule_id": "EBS_UNATTACHED",
+    "description": "EBS volume vol-0012 (8 GB sc1) is unattached for 29 days",
+    "remediation": "Create a snapshot for backup, then delete the volume. If still needed, attach it to an instance or use EBS Snapshot Archive.",
+    "waste_cost": 16.89,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {
+      "size_gb": 8,
+      "volume_type": "sc1",
+      "last_attached_days_ago": 29
+    }
+  },
+  {
+    "resource_id": "s3-0060",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_ENCRYPTION",
+    "description": "S3 bucket \"bucket-logs-0060\" has no server-side encryption",
+    "remediation": "Enable SSE-S3 (AES256) as a minimum, or SSE-KMS for stricter key management. Apply a bucket policy to deny unencrypted uploads.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "encryption": null
+    }
+  },
+  {
+    "resource_id": "s3-0060",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_SSL_ENFORCEMENT",
+    "description": "S3 bucket \"bucket-logs-0060\" does not enforce HTTPS-only access",
+    "remediation": "Add a bucket policy with a Deny condition on \"aws:SecureTransport\": \"false\" to block unencrypted HTTP requests.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0000",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_SSL_ENFORCEMENT",
+    "description": "S3 bucket \"bucket-logs-0000\" does not enforce HTTPS-only access",
+    "remediation": "Add a bucket policy with a Deny condition on \"aws:SecureTransport\": \"false\" to block unencrypted HTTP requests.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "vol-0045",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "medium",
+    "rule_id": "EBS_NO_SNAPSHOT",
+    "description": "EBS volume vol-0045 has no associated snapshot / backup",
+    "remediation": "Create a snapshot immediately and set up an AWS Backup plan or Data Lifecycle Manager (DLM) policy for automated daily snapshots.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0046",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_SSL_ENFORCEMENT",
+    "description": "S3 bucket \"bucket-archive-0046\" does not enforce HTTPS-only access",
+    "remediation": "Add a bucket policy with a Deny condition on \"aws:SecureTransport\": \"false\" to block unencrypted HTTP requests.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0021",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_ENCRYPTION",
+    "description": "S3 bucket \"bucket-backups-0021\" has no server-side encryption",
+    "remediation": "Enable SSE-S3 (AES256) as a minimum, or SSE-KMS for stricter key management. Apply a bucket policy to deny unencrypted uploads.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-south-1",
+    "extra": {
+      "encryption": null
+    }
+  },
+  {
+    "resource_id": "vol-0051",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "medium",
+    "rule_id": "EBS_NO_SNAPSHOT",
+    "description": "EBS volume vol-0051 has no associated snapshot / backup",
+    "remediation": "Create a snapshot immediately and set up an AWS Backup plan or Data Lifecycle Manager (DLM) policy for automated daily snapshots.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "vol-0067",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "medium",
+    "rule_id": "EBS_NO_SNAPSHOT",
+    "description": "EBS volume vol-0067 has no associated snapshot / backup",
+    "remediation": "Create a snapshot immediately and set up an AWS Backup plan or Data Lifecycle Manager (DLM) policy for automated daily snapshots.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "us-west-2",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0058",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_SSL_ENFORCEMENT",
+    "description": "S3 bucket \"bucket-archive-0058\" does not enforce HTTPS-only access",
+    "remediation": "Add a bucket policy with a Deny condition on \"aws:SecureTransport\": \"false\" to block unencrypted HTTP requests.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0013",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_ENCRYPTION",
+    "description": "S3 bucket \"bucket-data-0013\" has no server-side encryption",
+    "remediation": "Enable SSE-S3 (AES256) as a minimum, or SSE-KMS for stricter key management. Apply a bucket policy to deny unencrypted uploads.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-southeast-1",
+    "extra": {
+      "encryption": null
+    }
+  },
+  {
+    "resource_id": "s3-0072",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_ENCRYPTION",
+    "description": "S3 bucket \"bucket-logs-0072\" has no server-side encryption",
+    "remediation": "Enable SSE-S3 (AES256) as a minimum, or SSE-KMS for stricter key management. Apply a bucket policy to deny unencrypted uploads.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-southeast-1",
+    "extra": {
+      "encryption": null
+    }
+  },
+  {
+    "resource_id": "s3-0072",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_SSL_ENFORCEMENT",
+    "description": "S3 bucket \"bucket-logs-0072\" does not enforce HTTPS-only access",
+    "remediation": "Add a bucket policy with a Deny condition on \"aws:SecureTransport\": \"false\" to block unencrypted HTTP requests.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-southeast-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0091",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_SSL_ENFORCEMENT",
+    "description": "S3 bucket \"bucket-data-0091\" does not enforce HTTPS-only access",
+    "remediation": "Add a bucket policy with a Deny condition on \"aws:SecureTransport\": \"false\" to block unencrypted HTTP requests.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0037",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_SSL_ENFORCEMENT",
+    "description": "S3 bucket \"bucket-data-0037\" does not enforce HTTPS-only access",
+    "remediation": "Add a bucket policy with a Deny condition on \"aws:SecureTransport\": \"false\" to block unencrypted HTTP requests.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0050",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_ENCRYPTION",
+    "description": "S3 bucket \"bucket-assets-0050\" has no server-side encryption",
+    "remediation": "Enable SSE-S3 (AES256) as a minimum, or SSE-KMS for stricter key management. Apply a bucket policy to deny unencrypted uploads.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "eu-west-1",
+    "extra": {
+      "encryption": null
+    }
+  },
+  {
+    "resource_id": "s3-0086",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_ENCRYPTION",
+    "description": "S3 bucket \"bucket-assets-0086\" has no server-side encryption",
+    "remediation": "Enable SSE-S3 (AES256) as a minimum, or SSE-KMS for stricter key management. Apply a bucket policy to deny unencrypted uploads.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "eu-west-1",
+    "extra": {
+      "encryption": null
+    }
+  },
+  {
+    "resource_id": "vol-0073",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "medium",
+    "rule_id": "EBS_NO_SNAPSHOT",
+    "description": "EBS volume vol-0073 has no associated snapshot / backup",
+    "remediation": "Create a snapshot immediately and set up an AWS Backup plan or Data Lifecycle Manager (DLM) policy for automated daily snapshots.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "us-west-2",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0011",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_SSL_ENFORCEMENT",
+    "description": "S3 bucket \"bucket-reports-0011\" does not enforce HTTPS-only access",
+    "remediation": "Add a bucket policy with a Deny condition on \"aws:SecureTransport\": \"false\" to block unencrypted HTTP requests.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-south-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0036",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_ENCRYPTION",
+    "description": "S3 bucket \"bucket-logs-0036\" has no server-side encryption",
+    "remediation": "Enable SSE-S3 (AES256) as a minimum, or SSE-KMS for stricter key management. Apply a bucket policy to deny unencrypted uploads.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "encryption": null
+    }
+  },
+  {
+    "resource_id": "s3-0036",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_SSL_ENFORCEMENT",
+    "description": "S3 bucket \"bucket-logs-0036\" does not enforce HTTPS-only access",
+    "remediation": "Add a bucket policy with a Deny condition on \"aws:SecureTransport\": \"false\" to block unencrypted HTTP requests.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0096",
+    "resource_type": "s3_bucket",
+    "issue_type": "misconfiguration",
+    "severity": "medium",
+    "rule_id": "S3_NO_ENCRYPTION",
+    "description": "S3 bucket \"bucket-logs-0096\" has no server-side encryption",
+    "remediation": "Enable SSE-S3 (AES256) as a minimum, or SSE-KMS for stricter key management. Apply a bucket policy to deny unencrypted uploads.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {
+      "encryption": null
+    }
+  },
+  {
+    "resource_id": "vol-0074",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0074 is missing required tags: project",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "us-east-1",
+    "extra": {
+      "missing_tags": [
+        "project"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0084",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "security_group sg-0084 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0028",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "EBS_GP2_UPGRADE",
+    "description": "EBS volume vol-0028 uses gp2 type; gp3 offers 20 % cost savings and better baseline performance (est. saving: $1.0/mo)",
+    "remediation": "Modify the volume type from gp2 to gp3 directly in the console (no downtime required). gp3 provides 3000 IOPS baseline at lower cost.",
+    "waste_cost": 1.0,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {
+      "current_type": "gp2",
+      "recommended_type": "gp3",
+      "estimated_monthly_savings": 1.0
+    }
+  },
+  {
+    "resource_id": "vol-0028",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0028 is missing required tags: environment, owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {
+      "missing_tags": [
+        "environment",
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0026",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0026 is missing required tags: project",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-southeast-1",
+    "extra": {
+      "missing_tags": [
+        "project"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0019",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-data-0019\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0019",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-data-0019\" has not been accessed in 297 days (current class: STANDARD_IA)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 81.8,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {
+      "last_accessed_days_ago": 297,
+      "current_storage_class": "STANDARD_IA",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0019",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0019 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0076",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-archive-0076\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "us-east-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0076",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0076 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "us-east-1",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0070",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0070 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0062",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "SG_UNDOCUMENTED_RULES",
+    "description": "Security group sg-0062 has 2 inbound rules with no description \u2014 hard to audit",
+    "remediation": "Add clear descriptions to every security group rule so that reviewers can understand the intent without guessing.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "undocumented_rule_count": 2
+    }
+  },
+  {
+    "resource_id": "sg-0062",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "security_group sg-0062 is missing required tags: environment, owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "missing_tags": [
+        "environment",
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0002",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-assets-0002\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-east-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0002",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-assets-0002\" has not been accessed in 107 days (current class: INTELLIGENT_TIERING)",
+    "remediation": "Move objects to STANDARD_IA storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 46.11,
+    "data_sensitivity": "high",
+    "region": "us-east-1",
+    "extra": {
+      "last_accessed_days_ago": 107,
+      "current_storage_class": "INTELLIGENT_TIERING",
+      "suggested_storage_class": "STANDARD_IA"
+    }
+  },
+  {
+    "resource_id": "vol-0078",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0078 is missing required tags: project",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "eu-west-1",
+    "extra": {
+      "missing_tags": [
+        "project"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0055",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0055 is missing required tags: environment, owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "ap-southeast-1",
+    "extra": {
+      "missing_tags": [
+        "environment",
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0080",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "EBS_GP2_UPGRADE",
+    "description": "EBS volume vol-0080 uses gp2 type; gp3 offers 20 % cost savings and better baseline performance (est. saving: $10.0/mo)",
+    "remediation": "Modify the volume type from gp2 to gp3 directly in the console (no downtime required). gp3 provides 3000 IOPS baseline at lower cost.",
+    "waste_cost": 10.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "current_type": "gp2",
+      "recommended_type": "gp3",
+      "estimated_monthly_savings": 10.0
+    }
+  },
+  {
+    "resource_id": "vol-0080",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0080 is missing required tags: project",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "missing_tags": [
+        "project"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0077",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "security_group sg-0077 is missing required tags: environment, owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "missing_tags": [
+        "environment",
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0056",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "security_group sg-0056 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "us-west-2",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0035",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0035 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0094",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0094 is missing required tags: project",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "missing_tags": [
+        "project"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0049",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0049 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0009",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-backups-0009\" has not been accessed in 181 days (current class: GLACIER)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 69.48,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {
+      "last_accessed_days_ago": 181,
+      "current_storage_class": "GLACIER",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0009",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0009 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0065",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0065 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0057",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "security_group sg-0057 is missing required tags: project, environment, owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "us-east-1",
+    "extra": {
+      "missing_tags": [
+        "project",
+        "environment",
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0014",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-assets-0014\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0014",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-assets-0014\" has not been accessed in 125 days (current class: STANDARD)",
+    "remediation": "Move objects to STANDARD_IA storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 9.53,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "last_accessed_days_ago": 125,
+      "current_storage_class": "STANDARD",
+      "suggested_storage_class": "STANDARD_IA"
+    }
+  },
+  {
+    "resource_id": "s3-0014",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0014 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0061",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "security_group sg-0061 is missing required tags: project",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-south-1",
+    "extra": {
+      "missing_tags": [
+        "project"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0071",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "SG_UNDOCUMENTED_RULES",
+    "description": "Security group sg-0071 has 2 inbound rules with no description \u2014 hard to audit",
+    "remediation": "Add clear descriptions to every security group rule so that reviewers can understand the intent without guessing.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "undocumented_rule_count": 2
+    }
+  },
+  {
+    "resource_id": "vol-0066",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0066 is missing required tags: project",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "missing_tags": [
+        "project"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0052",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_LOGGING_DISABLED",
+    "description": "S3 bucket \"bucket-archive-0052\" has access logging disabled",
+    "remediation": "Enable S3 server access logging to a dedicated log bucket. Logs are required for audit trails and incident investigation.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "ap-south-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "vol-0015",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0015 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "eu-west-1",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0044",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-assets-0044\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0030",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-logs-0030\" has not been accessed in 177 days (current class: STANDARD)",
+    "remediation": "Move objects to STANDARD_IA storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 12.95,
+    "data_sensitivity": "medium",
+    "region": "us-west-2",
+    "extra": {
+      "last_accessed_days_ago": 177,
+      "current_storage_class": "STANDARD",
+      "suggested_storage_class": "STANDARD_IA"
+    }
+  },
+  {
+    "resource_id": "s3-0030",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0030 is missing required tags: project, environment, owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "us-west-2",
+    "extra": {
+      "missing_tags": [
+        "project",
+        "environment",
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0008",
+    "resource_type": "security_group",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "SG_UNUSED",
+    "description": "Security group sg-0008 (sg-custom-0008) is not attached to any instance",
+    "remediation": "Delete unused security groups to reduce attack surface and keep the environment clean. Use AWS Config rule \"vpc-sg-open-only-to-authorized-ports\" for ongoing compliance.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "attached_to_instances": []
+    }
+  },
+  {
+    "resource_id": "sg-0008",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "SG_UNDOCUMENTED_RULES",
+    "description": "Security group sg-0008 has 3 inbound rules with no description \u2014 hard to audit",
+    "remediation": "Add clear descriptions to every security group rule so that reviewers can understand the intent without guessing.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "undocumented_rule_count": 3
+    }
+  },
+  {
+    "resource_id": "sg-0008",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "security_group sg-0008 is missing required tags: project",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "missing_tags": [
+        "project"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0006",
+    "resource_type": "security_group",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "SG_UNUSED",
+    "description": "Security group sg-0006 (sg-custom-0006) is not attached to any instance",
+    "remediation": "Delete unused security groups to reduce attack surface and keep the environment clean. Use AWS Config rule \"vpc-sg-open-only-to-authorized-ports\" for ongoing compliance.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "eu-west-1",
+    "extra": {
+      "attached_to_instances": []
+    }
+  },
+  {
+    "resource_id": "sg-0006",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "SG_UNDOCUMENTED_RULES",
+    "description": "Security group sg-0006 has 2 inbound rules with no description \u2014 hard to audit",
+    "remediation": "Add clear descriptions to every security group rule so that reviewers can understand the intent without guessing.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "eu-west-1",
+    "extra": {
+      "undocumented_rule_count": 2
+    }
+  },
+  {
+    "resource_id": "sg-0006",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "security_group sg-0006 is missing required tags: project",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "eu-west-1",
+    "extra": {
+      "missing_tags": [
+        "project"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0005",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0005 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0020",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_LOGGING_DISABLED",
+    "description": "S3 bucket \"bucket-assets-0020\" has access logging disabled",
+    "remediation": "Enable S3 server access logging to a dedicated log bucket. Logs are required for audit trails and incident investigation.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-south-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0020",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-assets-0020\" has not been accessed in 220 days (current class: INTELLIGENT_TIERING)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 1.0,
+    "data_sensitivity": "high",
+    "region": "ap-south-1",
+    "extra": {
+      "last_accessed_days_ago": 220,
+      "current_storage_class": "INTELLIGENT_TIERING",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0020",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0020 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-south-1",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0032",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0032 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "ap-southeast-1",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0099",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-backups-0099\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "us-west-2",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0099",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-backups-0099\" has not been accessed in 333 days (current class: GLACIER)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 1.42,
+    "data_sensitivity": "low",
+    "region": "us-west-2",
+    "extra": {
+      "last_accessed_days_ago": 333,
+      "current_storage_class": "GLACIER",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0099",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0099 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "us-west-2",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0040",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-archive-0040\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "vol-0039",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0039 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0043",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0043 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0018",
+    "resource_type": "security_group",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "SG_UNUSED",
+    "description": "Security group sg-0018 (sg-custom-0018) is not attached to any instance",
+    "remediation": "Delete unused security groups to reduce attack surface and keep the environment clean. Use AWS Config rule \"vpc-sg-open-only-to-authorized-ports\" for ongoing compliance.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "ap-south-1",
+    "extra": {
+      "attached_to_instances": []
+    }
+  },
+  {
+    "resource_id": "s3-0060",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-logs-0060\" has not been accessed in 300 days (current class: STANDARD)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 11.67,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "last_accessed_days_ago": 300,
+      "current_storage_class": "STANDARD",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0047",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-reports-0047\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "ap-south-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0047",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-reports-0047\" has not been accessed in 320 days (current class: INTELLIGENT_TIERING)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 78.26,
+    "data_sensitivity": "low",
+    "region": "ap-south-1",
+    "extra": {
+      "last_accessed_days_ago": 320,
+      "current_storage_class": "INTELLIGENT_TIERING",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0047",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0047 is missing required tags: project",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "ap-south-1",
+    "extra": {
+      "missing_tags": [
+        "project"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0000",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-logs-0000\" has not been accessed in 112 days (current class: GLACIER)",
+    "remediation": "Move objects to STANDARD_IA storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 11.97,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "last_accessed_days_ago": 112,
+      "current_storage_class": "GLACIER",
+      "suggested_storage_class": "STANDARD_IA"
+    }
+  },
+  {
+    "resource_id": "s3-0000",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0000 is missing required tags: environment, owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-east-1",
+    "extra": {
+      "missing_tags": [
+        "environment",
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0092",
+    "resource_type": "security_group",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "SG_UNUSED",
+    "description": "Security group sg-0092 (sg-custom-0092) is not attached to any instance",
+    "remediation": "Delete unused security groups to reduce attack surface and keep the environment clean. Use AWS Config rule \"vpc-sg-open-only-to-authorized-ports\" for ongoing compliance.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-south-1",
+    "extra": {
+      "attached_to_instances": []
+    }
+  },
+  {
+    "resource_id": "vol-0045",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0045 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0016",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-archive-0016\" has not been accessed in 287 days (current class: GLACIER)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 6.06,
+    "data_sensitivity": "medium",
+    "region": "eu-west-1",
+    "extra": {
+      "last_accessed_days_ago": 287,
+      "current_storage_class": "GLACIER",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0016",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0016 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "eu-west-1",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0098",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0098 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0089",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0089 is missing required tags: project",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-south-1",
+    "extra": {
+      "missing_tags": [
+        "project"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0046",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-archive-0046\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0046",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-archive-0046\" has not been accessed in 225 days (current class: STANDARD)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 59.84,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "last_accessed_days_ago": 225,
+      "current_storage_class": "STANDARD",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "vol-0010",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0010 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0021",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_LOGGING_DISABLED",
+    "description": "S3 bucket \"bucket-backups-0021\" has access logging disabled",
+    "remediation": "Enable S3 server access logging to a dedicated log bucket. Logs are required for audit trails and incident investigation.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-south-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0021",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-backups-0021\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-south-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0021",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-backups-0021\" has not been accessed in 207 days (current class: INTELLIGENT_TIERING)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 80.06,
+    "data_sensitivity": "high",
+    "region": "ap-south-1",
+    "extra": {
+      "last_accessed_days_ago": 207,
+      "current_storage_class": "INTELLIGENT_TIERING",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "vol-0093",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0093 is missing required tags: project, owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "missing_tags": [
+        "project",
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0051",
+    "resource_type": "ebs_volume",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "EBS_GP2_UPGRADE",
+    "description": "EBS volume vol-0051 uses gp2 type; gp3 offers 20 % cost savings and better baseline performance (est. saving: $20.0/mo)",
+    "remediation": "Modify the volume type from gp2 to gp3 directly in the console (no downtime required). gp3 provides 3000 IOPS baseline at lower cost.",
+    "waste_cost": 20.0,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {
+      "current_type": "gp2",
+      "recommended_type": "gp3",
+      "estimated_monthly_savings": 20.0
+    }
+  },
+  {
+    "resource_id": "vol-0051",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0051 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0024",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-logs-0024\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-southeast-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0024",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-logs-0024\" has not been accessed in 132 days (current class: GLACIER)",
+    "remediation": "Move objects to STANDARD_IA storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 51.67,
+    "data_sensitivity": "medium",
+    "region": "ap-southeast-1",
+    "extra": {
+      "last_accessed_days_ago": 132,
+      "current_storage_class": "GLACIER",
+      "suggested_storage_class": "STANDARD_IA"
+    }
+  },
+  {
+    "resource_id": "s3-0024",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0024 is missing required tags: project, owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-southeast-1",
+    "extra": {
+      "missing_tags": [
+        "project",
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0059",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "SG_UNDOCUMENTED_RULES",
+    "description": "Security group sg-0059 has 2 inbound rules with no description \u2014 hard to audit",
+    "remediation": "Add clear descriptions to every security group rule so that reviewers can understand the intent without guessing.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "ap-southeast-1",
+    "extra": {
+      "undocumented_rule_count": 2
+    }
+  },
+  {
+    "resource_id": "sg-0059",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "security_group sg-0059 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "ap-southeast-1",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0064",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_LOGGING_DISABLED",
+    "description": "S3 bucket \"bucket-archive-0064\" has access logging disabled",
+    "remediation": "Enable S3 server access logging to a dedicated log bucket. Logs are required for audit trails and incident investigation.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0064",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-archive-0064\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0064",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-archive-0064\" has not been accessed in 148 days (current class: INTELLIGENT_TIERING)",
+    "remediation": "Move objects to STANDARD_IA storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 7.33,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {
+      "last_accessed_days_ago": 148,
+      "current_storage_class": "INTELLIGENT_TIERING",
+      "suggested_storage_class": "STANDARD_IA"
+    }
+  },
+  {
+    "resource_id": "s3-0064",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0064 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0017",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_LOGGING_DISABLED",
+    "description": "S3 bucket \"bucket-reports-0017\" has access logging disabled",
+    "remediation": "Enable S3 server access logging to a dedicated log bucket. Logs are required for audit trails and incident investigation.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "us-east-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0017",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-reports-0017\" has not been accessed in 317 days (current class: GLACIER)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 107.95,
+    "data_sensitivity": "medium",
+    "region": "us-east-1",
+    "extra": {
+      "last_accessed_days_ago": 317,
+      "current_storage_class": "GLACIER",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0017",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0017 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "us-east-1",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0081",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "security_group sg-0081 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0067",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0067 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "us-west-2",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0058",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-archive-0058\" has not been accessed in 234 days (current class: INTELLIGENT_TIERING)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 61.98,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "last_accessed_days_ago": 234,
+      "current_storage_class": "INTELLIGENT_TIERING",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0058",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0058 is missing required tags: project, owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "missing_tags": [
+        "project",
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0095",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "SG_UNDOCUMENTED_RULES",
+    "description": "Security group sg-0095 has 2 inbound rules with no description \u2014 hard to audit",
+    "remediation": "Add clear descriptions to every security group rule so that reviewers can understand the intent without guessing.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-east-1",
+    "extra": {
+      "undocumented_rule_count": 2
+    }
+  },
+  {
+    "resource_id": "sg-0042",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "SG_UNDOCUMENTED_RULES",
+    "description": "Security group sg-0042 has 2 inbound rules with no description \u2014 hard to audit",
+    "remediation": "Add clear descriptions to every security group rule so that reviewers can understand the intent without guessing.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "eu-west-1",
+    "extra": {
+      "undocumented_rule_count": 2
+    }
+  },
+  {
+    "resource_id": "s3-0013",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-data-0013\" has not been accessed in 122 days (current class: INTELLIGENT_TIERING)",
+    "remediation": "Move objects to STANDARD_IA storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 10.57,
+    "data_sensitivity": "high",
+    "region": "ap-southeast-1",
+    "extra": {
+      "last_accessed_days_ago": 122,
+      "current_storage_class": "INTELLIGENT_TIERING",
+      "suggested_storage_class": "STANDARD_IA"
+    }
+  },
+  {
+    "resource_id": "s3-0072",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_LOGGING_DISABLED",
+    "description": "S3 bucket \"bucket-logs-0072\" has access logging disabled",
+    "remediation": "Enable S3 server access logging to a dedicated log bucket. Logs are required for audit trails and incident investigation.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-southeast-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0072",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0072 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-southeast-1",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "vol-0038",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0038 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0001",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_LOGGING_DISABLED",
+    "description": "S3 bucket \"bucket-data-0001\" has access logging disabled",
+    "remediation": "Enable S3 server access logging to a dedicated log bucket. Logs are required for audit trails and incident investigation.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "us-east-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0001",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-data-0001\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "us-east-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0001",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-data-0001\" has not been accessed in 193 days (current class: STANDARD)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 43.59,
+    "data_sensitivity": "medium",
+    "region": "us-east-1",
+    "extra": {
+      "last_accessed_days_ago": 193,
+      "current_storage_class": "STANDARD",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0091",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_LOGGING_DISABLED",
+    "description": "S3 bucket \"bucket-data-0091\" has access logging disabled",
+    "remediation": "Enable S3 server access logging to a dedicated log bucket. Logs are required for audit trails and incident investigation.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0091",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-data-0091\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0091",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-data-0091\" has not been accessed in 253 days (current class: INTELLIGENT_TIERING)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 61.05,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {
+      "last_accessed_days_ago": 253,
+      "current_storage_class": "INTELLIGENT_TIERING",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0091",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0091 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0037",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_LOGGING_DISABLED",
+    "description": "S3 bucket \"bucket-data-0037\" has access logging disabled",
+    "remediation": "Enable S3 server access logging to a dedicated log bucket. Logs are required for audit trails and incident investigation.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0037",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-data-0037\" has not been accessed in 230 days (current class: GLACIER)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 113.94,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {
+      "last_accessed_days_ago": 230,
+      "current_storage_class": "GLACIER",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0037",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0037 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0023",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_LOGGING_DISABLED",
+    "description": "S3 bucket \"bucket-reports-0023\" has access logging disabled",
+    "remediation": "Enable S3 server access logging to a dedicated log bucket. Logs are required for audit trails and incident investigation.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0023",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-reports-0023\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0023",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-reports-0023\" has not been accessed in 112 days (current class: GLACIER)",
+    "remediation": "Move objects to STANDARD_IA storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 79.0,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {
+      "last_accessed_days_ago": 112,
+      "current_storage_class": "GLACIER",
+      "suggested_storage_class": "STANDARD_IA"
+    }
+  },
+  {
+    "resource_id": "s3-0023",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0023 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0050",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_LOGGING_DISABLED",
+    "description": "S3 bucket \"bucket-assets-0050\" has access logging disabled",
+    "remediation": "Enable S3 server access logging to a dedicated log bucket. Logs are required for audit trails and incident investigation.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "eu-west-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0050",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-assets-0050\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "eu-west-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0050",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-assets-0050\" has not been accessed in 294 days (current class: INTELLIGENT_TIERING)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 24.55,
+    "data_sensitivity": "medium",
+    "region": "eu-west-1",
+    "extra": {
+      "last_accessed_days_ago": 294,
+      "current_storage_class": "INTELLIGENT_TIERING",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0087",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-backups-0087\" has not been accessed in 314 days (current class: INTELLIGENT_TIERING)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 107.48,
+    "data_sensitivity": null,
+    "region": "ap-southeast-1",
+    "extra": {
+      "last_accessed_days_ago": 314,
+      "current_storage_class": "INTELLIGENT_TIERING",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0086",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_LOGGING_DISABLED",
+    "description": "S3 bucket \"bucket-assets-0086\" has access logging disabled",
+    "remediation": "Enable S3 server access logging to a dedicated log bucket. Logs are required for audit trails and incident investigation.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "eu-west-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0086",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-assets-0086\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "eu-west-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0086",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-assets-0086\" has not been accessed in 393 days (current class: STANDARD_IA)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 77.37,
+    "data_sensitivity": "high",
+    "region": "eu-west-1",
+    "extra": {
+      "last_accessed_days_ago": 393,
+      "current_storage_class": "STANDARD_IA",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0086",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0086 is missing required tags: project, owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "eu-west-1",
+    "extra": {
+      "missing_tags": [
+        "project",
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0053",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-reports-0053\" has not been accessed in 232 days (current class: STANDARD)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 116.1,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {
+      "last_accessed_days_ago": 232,
+      "current_storage_class": "STANDARD",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "vol-0004",
+    "resource_type": "ebs_volume",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "ebs_volume vol-0004 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0068",
+    "resource_type": "security_group",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "SG_UNUSED",
+    "description": "Security group sg-0068 (sg-custom-0068) is not attached to any instance",
+    "remediation": "Delete unused security groups to reduce attack surface and keep the environment clean. Use AWS Config rule \"vpc-sg-open-only-to-authorized-ports\" for ongoing compliance.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-east-1",
+    "extra": {
+      "attached_to_instances": []
+    }
+  },
+  {
+    "resource_id": "sg-0068",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "security_group sg-0068 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-east-1",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0029",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-reports-0029\" has not been accessed in 159 days (current class: STANDARD_IA)",
+    "remediation": "Move objects to STANDARD_IA storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 84.18,
+    "data_sensitivity": null,
+    "region": "ap-south-1",
+    "extra": {
+      "last_accessed_days_ago": 159,
+      "current_storage_class": "STANDARD_IA",
+      "suggested_storage_class": "STANDARD_IA"
+    }
+  },
+  {
+    "resource_id": "s3-0029",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0029 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "ap-south-1",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0083",
+    "resource_type": "security_group",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "SG_UNUSED",
+    "description": "Security group sg-0083 (sg-custom-0083) is not attached to any instance",
+    "remediation": "Delete unused security groups to reduce attack surface and keep the environment clean. Use AWS Config rule \"vpc-sg-open-only-to-authorized-ports\" for ongoing compliance.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "eu-west-1",
+    "extra": {
+      "attached_to_instances": []
+    }
+  },
+  {
+    "resource_id": "s3-0011",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-reports-0011\" has not been accessed in 232 days (current class: INTELLIGENT_TIERING)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 26.28,
+    "data_sensitivity": "high",
+    "region": "ap-south-1",
+    "extra": {
+      "last_accessed_days_ago": 232,
+      "current_storage_class": "INTELLIGENT_TIERING",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "s3-0011",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0011 is missing required tags: owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-south-1",
+    "extra": {
+      "missing_tags": [
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0007",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "security_group sg-0007 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "us-east-1",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "sg-0082",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "security_group sg-0082 is missing required tags: environment",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "ap-southeast-1",
+    "extra": {
+      "missing_tags": [
+        "environment"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0041",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_VERSIONING_DISABLED",
+    "description": "S3 bucket \"bucket-reports-0041\" does not have versioning enabled",
+    "remediation": "Enable versioning to protect against accidental deletion and overwrites. Consider enabling MFA Delete for sensitive buckets.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "ap-south-1",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0041",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-reports-0041\" has not been accessed in 164 days (current class: INTELLIGENT_TIERING)",
+    "remediation": "Move objects to STANDARD_IA storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 76.47,
+    "data_sensitivity": "low",
+    "region": "ap-south-1",
+    "extra": {
+      "last_accessed_days_ago": 164,
+      "current_storage_class": "INTELLIGENT_TIERING",
+      "suggested_storage_class": "STANDARD_IA"
+    }
+  },
+  {
+    "resource_id": "s3-0041",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0041 is missing required tags: project",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "low",
+    "region": "ap-south-1",
+    "extra": {
+      "missing_tags": [
+        "project"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0036",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_LOGGING_DISABLED",
+    "description": "S3 bucket \"bucket-logs-0036\" has access logging disabled",
+    "remediation": "Enable S3 server access logging to a dedicated log bucket. Logs are required for audit trails and incident investigation.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0036",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-logs-0036\" has not been accessed in 174 days (current class: GLACIER)",
+    "remediation": "Move objects to STANDARD_IA storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 76.84,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "last_accessed_days_ago": 174,
+      "current_storage_class": "GLACIER",
+      "suggested_storage_class": "STANDARD_IA"
+    }
+  },
+  {
+    "resource_id": "s3-0036",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "COM_MISSING_TAGS",
+    "description": "s3_bucket s3-0036 is missing required tags: environment, owner",
+    "remediation": "Apply required tags: project, environment, owner. Use AWS Config rule \"required-tags\" or Tag Policies in AWS Organizations to enforce tagging going forward.",
+    "waste_cost": 0.0,
+    "data_sensitivity": null,
+    "region": "us-west-2",
+    "extra": {
+      "missing_tags": [
+        "environment",
+        "owner"
+      ]
+    }
+  },
+  {
+    "resource_id": "s3-0096",
+    "resource_type": "s3_bucket",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "S3_LOGGING_DISABLED",
+    "description": "S3 bucket \"bucket-logs-0096\" has access logging disabled",
+    "remediation": "Enable S3 server access logging to a dedicated log bucket. Logs are required for audit trails and incident investigation.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {}
+  },
+  {
+    "resource_id": "s3-0096",
+    "resource_type": "s3_bucket",
+    "issue_type": "waste",
+    "severity": "low",
+    "rule_id": "S3_IDLE_BUCKET",
+    "description": "S3 bucket \"bucket-logs-0096\" has not been accessed in 279 days (current class: INTELLIGENT_TIERING)",
+    "remediation": "Move objects to GLACIER storage class via a Lifecycle rule to reduce storage costs. Consider archiving or deleting if no longer needed.",
+    "waste_cost": 67.66,
+    "data_sensitivity": "high",
+    "region": "us-west-2",
+    "extra": {
+      "last_accessed_days_ago": 279,
+      "current_storage_class": "INTELLIGENT_TIERING",
+      "suggested_storage_class": "GLACIER"
+    }
+  },
+  {
+    "resource_id": "sg-0025",
+    "resource_type": "security_group",
+    "issue_type": "compliance",
+    "severity": "low",
+    "rule_id": "SG_UNDOCUMENTED_RULES",
+    "description": "Security group sg-0025 has 2 inbound rules with no description \u2014 hard to audit",
+    "remediation": "Add clear descriptions to every security group rule so that reviewers can understand the intent without guessing.",
+    "waste_cost": 0.0,
+    "data_sensitivity": "medium",
+    "region": "ap-south-1",
+    "extra": {
+      "undocumented_rule_count": 2
+    }
+  }
+]

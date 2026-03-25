@@ -1,0 +1,247 @@
+# CloudGuardian Configuration
+# ════════════════════════════════════════════════════════════════════════════
+# This file controls all detection rules, scoring weights, and severity levels.
+# Modify here instead of editing Python code.
+
+# ────────────────────────────────────────────────────────────────────────────
+# RULES ENABLE/DISABLE
+# ────────────────────────────────────────────────────────────────────────────
+rules:
+  # S3 Bucket Rules
+  s3:
+    enabled: true
+    rules:
+      S3_PUBLIC_BUCKET:
+        enabled: true
+        description: "Detects S3 buckets with public access"
+      S3_NO_ENCRYPTION:
+        enabled: true
+        description: "Detects S3 buckets without server-side encryption"
+      S3_LOGGING_DISABLED:
+        enabled: true
+        description: "Detects S3 buckets with access logging disabled"
+      S3_VERSIONING_DISABLED:
+        enabled: true
+        description: "Detects S3 buckets without versioning enabled"
+      S3_IDLE_BUCKET:
+        enabled: true
+        description: "Detects S3 buckets idle for >90 days (cost waste)"
+      S3_NO_SSL_ENFORCEMENT:
+        enabled: true
+        description: "Detects S3 buckets not enforcing HTTPS-only access"
+
+  # EBS Volume Rules
+  ebs:
+    enabled: true
+    rules:
+      EBS_UNATTACHED:
+        enabled: true
+        description: "Detects unattached EBS volumes (waste)"
+      EBS_UNENCRYPTED:
+        enabled: true
+        description: "Detects EBS volumes without encryption at rest"
+      EBS_NO_SNAPSHOT:
+        enabled: true
+        description: "Detects EBS volumes without backup snapshots"
+      EBS_GP2_UPGRADE:
+        enabled: true
+        description: "Detects gp2 volumes that should upgrade to gp3 (cost save)"
+      EBS_OVERSIZED_UNATTACHED:
+        enabled: true
+        description: "Detects large unattached volumes (major waste)"
+
+  # Security Group Rules
+  security_group:
+    enabled: true
+    rules:
+      SG_OPEN_SSH:
+        enabled: true
+        description: "Detects SSH (port 22) open to 0.0.0.0/0"
+      SG_OPEN_TELNET:
+        enabled: true
+        description: "Detects Telnet (port 23) open to 0.0.0.0/0"
+      SG_OPEN_RDP:
+        enabled: true
+        description: "Detects RDP (port 3389) open to 0.0.0.0/0"
+      SG_OPEN_POSTGRESQL:
+        enabled: true
+        description: "Detects PostgreSQL (port 5432) open to 0.0.0.0/0"
+      SG_OPEN_MYSQL:
+        enabled: true
+        description: "Detects MySQL (port 3306) open to 0.0.0.0/0"
+      SG_OPEN_MSSQL:
+        enabled: true
+        description: "Detects MSSQL (port 1433) open to 0.0.0.0/0"
+      SG_OPEN_REDIS:
+        enabled: true
+        description: "Detects Redis (port 6379) open to 0.0.0.0/0"
+      SG_OPEN_MONGODB:
+        enabled: true
+        description: "Detects MongoDB (port 27017) open to 0.0.0.0/0"
+      SG_OPEN_ELASTICSEARCH:
+        enabled: true
+        description: "Detects Elasticsearch (port 9200) open to 0.0.0.0/0"
+      SG_OPEN_DOCKER:
+        enabled: true
+        description: "Detects Docker daemon (port 2375) open to 0.0.0.0/0"
+      SG_ALLOW_ALL_INBOUND:
+        enabled: true
+        description: "Detects security groups allowing ALL inbound traffic"
+      SG_WIDE_PORT_RANGE:
+        enabled: true
+        description: "Detects security groups with wide port ranges open to internet"
+      SG_UNUSED:
+        enabled: true
+        description: "Detects unused/orphaned security groups"
+      SG_UNDOCUMENTED_RULES:
+        enabled: true
+        description: "Detects security group rules without descriptions"
+      SG_DEFAULT_IN_USE:
+        enabled: true
+        description: "Detects default security group being used by instances"
+
+  # Cross-Resource Rules
+  common:
+    enabled: true
+    rules:
+      COM_MISSING_TAGS:
+        enabled: true
+        description: "Detects resources missing required tags (project, environment, owner)"
+      COM_HIGH_SENSITIVITY_UNENCRYPTED:
+        enabled: true
+        description: "Detects high-sensitivity resources without encryption"
+
+
+# ────────────────────────────────────────────────────────────────────────────
+# SEVERITY LEVELS & SCORES
+# ────────────────────────────────────────────────────────────────────────────
+severity:
+  # Base severity score for RWC calculation
+  # Higher = more severe in the absence of other factors
+  scores:
+    critical: 10.0    # Immediate action required; active risk
+    high: 7.0         # Urgent; fix within 48 hours
+    medium: 4.0       # Important; address this sprint
+    low: 1.0          # Hygiene; fix when convenient
+
+  # How much more risky is an issue on a sensitive resource?
+  # Applied as multiplier to base severity score
+  data_sensitivity_multipliers:
+    high: 2.5         # e.g., PII database, customer data
+    medium: 1.5       # e.g., internal data
+    low: 1.0          # e.g., public documentation
+    unknown: 1.0      # Untagged resources (no penalty, no boost)
+
+  # Extra boost when resource explicitly tagged contains_pii: 'true'
+  pii_tag_boost: 1.5
+
+  # Issue type multiplier — how much emphasis on type?
+  # Misconfiguration (security hole) > compliance (policy) > waste (cost)
+  issue_type_multipliers:
+    misconfiguration: 1.2   # Active security gap
+    compliance: 1.0         # Policy/best-practice violation
+    waste: 0.8              # Pure cost inefficiency
+
+
+# ────────────────────────────────────────────────────────────────────────────
+# RWC (RISK-WEIGHTED COST) SCORING CONFIG
+# ────────────────────────────────────────────────────────────────────────────
+scoring:
+  # Region-based regulatory risk factors
+  # Added to RWC to account for regional compliance requirements
+  region_risk_factors:
+    eu-west-1: 0.5        # GDPR jurisdictions — higher regulatory risk
+    eu-central-1: 0.5
+    ap-south-1: 0.3       # PDPA / local regulations
+    ap-southeast-1: 0.2
+    us-east-1: 0.0        # Default US regions
+    us-west-2: 0.0
+    default: 0.0
+
+  # Rules flagged as actively exploited/high-urgency
+  # These get an extra +1.0 boost in RWC calculation
+  high_urgency_rules:
+    - S3_PUBLIC_BUCKET
+    - S3_NO_ENCRYPTION
+    - EBS_UNENCRYPTED
+    - SG_OPEN_SSH
+    - SG_OPEN_RDP
+    - SG_ALLOW_ALL_INBOUND
+    - COM_HIGH_SENSITIVITY_UNENCRYPTED
+
+  urgency_boost: 1.0
+
+  # Cost factor: log-scaled to prevent huge waste costs from dominating
+  # Formula: log(waste_cost + 1) — adds 0–6 points for $1–$500/mo waste
+  # This keeps a $500/mo waste from drowning out a critical $5/mo security hole
+  cost_dampening: true    # Enable log-scaling of cost factor
+
+
+# ────────────────────────────────────────────────────────────────────────────
+# PRIORITY BANDS
+# ────────────────────────────────────────────────────────────────────────────
+# RWC scores are bucketed into P1–P4 bands for easy triage
+priority_bands:
+  P1:
+    min_rwc: 25
+    label: "Immediate"
+    description: "Same-day response required — active security risk"
+    sla_hours: 2
+
+  P2:
+    min_rwc: 15
+    label: "Urgent"
+    description: "Fix within 48 hours — high-risk or sensitive data"
+    sla_hours: 48
+
+  P3:
+    min_rwc: 7
+    label: "This Sprint"
+    description: "Address in current sprint — important but not blocking"
+    sla_hours: 168      # 7 days
+
+  P4:
+    min_rwc: 0
+    label: "Hygiene"
+    description: "Best-practice improvements — no active risk"
+    sla_hours: 2592000  # 30 days
+
+
+# ────────────────────────────────────────────────────────────────────────────
+# RULE-SPECIFIC THRESHOLDS
+# ────────────────────────────────────────────────────────────────────────────
+# Adjust detection thresholds without code changes
+rule_thresholds:
+  # S3 rules
+  S3_IDLE_BUCKET:
+    idle_days_threshold: 90      # Bucket not accessed for N days = issue
+
+  # EBS rules
+  EBS_OVERSIZED_UNATTACHED:
+    size_gb_threshold: 500       # Volume > N GB unattached = issue
+  EBS_UNATTACHED:
+    idle_days_high_severity: 30  # >30 days unattached = high severity
+
+  # Security Group rules
+  SG_WIDE_PORT_RANGE:
+    port_range_threshold: 1000   # Port range > N ports = issue
+
+
+# ────────────────────────────────────────────────────────────────────────────
+# DETECTION DEFAULTS
+# ────────────────────────────────────────────────────────────────────────────
+detection:
+  # What to do if inventory has missing required fields?
+  strict_mode: true             # true = fail fast; false = skip resource
+
+  # What to count as "sensitive" data?
+  sensitive_tags:
+    - contains_pii
+    - pii_data
+    - confidential
+
+  # Required tags for compliance checking
+  required_tags:
+    - project
+    - environment
+    - owner

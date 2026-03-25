@@ -1,0 +1,3274 @@
+[
+  {
+    "id": "vol-0074",
+    "type": "ebs_volume",
+    "region": "us-east-1",
+    "monthly_cost": 143.72,
+    "created_at": "2024-10-13T04:47:07Z",
+    "tags": {
+      "environment": "production",
+      "owner": "team-data",
+      "data_sensitivity": "low"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 63,
+    "volume_type": "sc1",
+    "size_gb": 50,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:us-east-1:123456789012:key/mrk-3626",
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "sg-0084",
+    "name": "sg-custom-0084",
+    "type": "security_group",
+    "region": "us-east-1",
+    "monthly_cost": 0.0,
+    "created_at": "2024-09-08T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "environment": "staging"
+    },
+    "vpc_id": "vpc-81063",
+    "description": "app tier",
+    "inbound_rules": [
+      {
+        "from_port": 5432,
+        "to_port": 5432,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": "Allow port 5432"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-97535",
+      "i-55537"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "vol-0003",
+    "type": "ebs_volume",
+    "region": "us-west-2",
+    "monthly_cost": 138.5,
+    "created_at": "2026-01-27T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "environment": "development",
+      "owner": "team-data",
+      "data_sensitivity": "low"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 117,
+    "volume_type": "sc1",
+    "size_gb": 1000,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:us-east-1:123456789012:key/mrk-6168",
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "vol-0028",
+    "type": "ebs_volume",
+    "region": "ap-south-1",
+    "monthly_cost": 8.78,
+    "created_at": "2024-09-19T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "data_sensitivity": "medium"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 26,
+    "volume_type": "gp2",
+    "size_gb": 50,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": false,
+    "kms_key_id": null,
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "vol-0026",
+    "type": "ebs_volume",
+    "region": "ap-southeast-1",
+    "monthly_cost": 150.77,
+    "created_at": "2024-09-12T04:47:07Z",
+    "tags": {
+      "environment": "production",
+      "owner": "team-ml",
+      "data_sensitivity": "medium"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 308,
+    "volume_type": "st1",
+    "size_gb": 20,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:ap-south-1:123456789012:key/mrk-4595",
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "s3-0019",
+    "name": "bucket-data-0019",
+    "type": "s3_bucket",
+    "region": "ap-south-1",
+    "monthly_cost": 204.5,
+    "created_at": "2024-09-22T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "production",
+      "data_sensitivity": "medium"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "aws:kms",
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 1380.1,
+    "object_count": 2191232,
+    "storage_class": "STANDARD_IA",
+    "last_accessed_days_ago": 297
+  },
+  {
+    "id": "s3-0076",
+    "name": "bucket-archive-0076",
+    "type": "s3_bucket",
+    "region": "us-east-1",
+    "monthly_cost": 7.66,
+    "created_at": "2025-08-17T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "environment": "production",
+      "data_sensitivity": "medium",
+      "contains_pii": "true"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "aws:kms",
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 27440.3,
+    "object_count": 4427269,
+    "storage_class": "GLACIER",
+    "last_accessed_days_ago": 56
+  },
+  {
+    "id": "vol-0070",
+    "type": "ebs_volume",
+    "region": "eu-west-1",
+    "monthly_cost": 17.85,
+    "created_at": "2025-12-19T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "development"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 285,
+    "volume_type": "io1",
+    "size_gb": 500,
+    "iops": 3000,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:ap-south-1:123456789012:key/mrk-5655",
+    "snapshot_id": null,
+    "multi_attach_enabled": true,
+    "delete_on_termination": false
+  },
+  {
+    "id": "sg-0062",
+    "name": "sg-custom-0062",
+    "type": "security_group",
+    "region": "us-east-1",
+    "monthly_cost": 0.0,
+    "created_at": "2025-12-22T04:47:07Z",
+    "tags": {
+      "project": "gamma"
+    },
+    "vpc_id": "vpc-79531",
+    "description": "web tier",
+    "inbound_rules": [
+      {
+        "from_port": 8443,
+        "to_port": 8443,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": "Allow port 8443"
+      },
+      {
+        "from_port": 6379,
+        "to_port": 6379,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 6379,
+        "to_port": 6379,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 5432,
+        "to_port": 5432,
+        "protocol": "tcp",
+        "cidr_ipv4": "172.16.0.0/12",
+        "cidr_ipv6": null,
+        "description": "Allow port 5432"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-19120",
+      "i-28595",
+      "i-92991"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "sg-0048",
+    "name": "sg-custom-0048",
+    "type": "security_group",
+    "region": "eu-west-1",
+    "monthly_cost": 0.0,
+    "created_at": "2026-01-27T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "production",
+      "owner": "team-data",
+      "data_sensitivity": "medium"
+    },
+    "vpc_id": "vpc-48452",
+    "description": "app tier",
+    "inbound_rules": [
+      {
+        "from_port": 3389,
+        "to_port": 3389,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": "Allow port 3389"
+      },
+      {
+        "from_port": 3389,
+        "to_port": 3389,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": null
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": true,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-13794",
+      "i-16028"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "s3-0002",
+    "name": "bucket-assets-0002",
+    "type": "s3_bucket",
+    "region": "us-east-1",
+    "monthly_cost": 115.28,
+    "created_at": "2024-12-16T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "environment": "development",
+      "owner": "team-backend",
+      "data_sensitivity": "high",
+      "contains_pii": "true"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "AES256",
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 18241.7,
+    "object_count": 3105304,
+    "storage_class": "INTELLIGENT_TIERING",
+    "last_accessed_days_ago": 107
+  },
+  {
+    "id": "vol-0078",
+    "type": "ebs_volume",
+    "region": "eu-west-1",
+    "monthly_cost": 158.76,
+    "created_at": "2025-04-06T04:47:07Z",
+    "tags": {
+      "environment": "development",
+      "owner": "team-ml",
+      "data_sensitivity": "low"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 123,
+    "volume_type": "io1",
+    "size_gb": 500,
+    "iops": 3000,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:us-east-1:123456789012:key/mrk-6447",
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "s3-0055",
+    "name": "bucket-data-0055",
+    "type": "s3_bucket",
+    "region": "ap-southeast-1",
+    "monthly_cost": 126.9,
+    "created_at": "2025-10-18T04:47:07Z",
+    "tags": {
+      "project": "beta",
+      "data_sensitivity": "low"
+    },
+    "is_public": true,
+    "public_access_block": false,
+    "acl": "public-read",
+    "encryption": "aws:kms",
+    "versioning_enabled": true,
+    "mfa_delete_enabled": true,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 41684.7,
+    "object_count": 3423525,
+    "storage_class": "INTELLIGENT_TIERING",
+    "last_accessed_days_ago": 16
+  },
+  {
+    "id": "vol-0031",
+    "type": "ebs_volume",
+    "region": "us-west-2",
+    "monthly_cost": 89.92,
+    "created_at": "2024-10-07T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "production",
+      "owner": "team-backend"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 333,
+    "volume_type": "io1",
+    "size_gb": 50,
+    "iops": 16000,
+    "throughput_mbps": null,
+    "encrypted": false,
+    "kms_key_id": null,
+    "snapshot_id": "snap-80539",
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "vol-0080",
+    "type": "ebs_volume",
+    "region": "eu-west-1",
+    "monthly_cost": 90.21,
+    "created_at": "2025-02-09T04:47:07Z",
+    "tags": {
+      "environment": "production",
+      "owner": "team-data"
+    },
+    "attached_to": "i-16265",
+    "state": "in-use",
+    "last_attached_days_ago": null,
+    "volume_type": "gp2",
+    "size_gb": 500,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:ap-south-1:123456789012:key/mrk-7334",
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "sg-0077",
+    "name": "sg-custom-0077",
+    "type": "security_group",
+    "region": "us-east-1",
+    "monthly_cost": 0.0,
+    "created_at": "2024-10-05T04:47:07Z",
+    "tags": {
+      "project": "gamma"
+    },
+    "vpc_id": "vpc-57265",
+    "description": "default VPC security group",
+    "inbound_rules": [
+      {
+        "from_port": 3389,
+        "to_port": 3389,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": "Allow port 3389"
+      },
+      {
+        "from_port": 443,
+        "to_port": 443,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": "Allow port 443"
+      },
+      {
+        "from_port": 8443,
+        "to_port": 8443,
+        "protocol": "tcp",
+        "cidr_ipv4": "172.16.0.0/12",
+        "cidr_ipv6": null,
+        "description": "Allow port 8443"
+      },
+      {
+        "from_port": 6379,
+        "to_port": 6379,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 27017,
+        "to_port": 27017,
+        "protocol": "tcp",
+        "cidr_ipv4": "172.16.0.0/12",
+        "cidr_ipv6": null,
+        "description": "Allow port 27017"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-97080"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "sg-0056",
+    "name": "sg-custom-0056",
+    "type": "security_group",
+    "region": "us-west-2",
+    "monthly_cost": 0.0,
+    "created_at": "2024-08-24T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "owner": "team-data",
+      "data_sensitivity": "low"
+    },
+    "vpc_id": "vpc-36896",
+    "description": "default VPC security group",
+    "inbound_rules": [
+      {
+        "from_port": 27017,
+        "to_port": 27017,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 3306,
+        "to_port": 3306,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": "Allow port 3306"
+      },
+      {
+        "from_port": 443,
+        "to_port": 443,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": "Allow port 443"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-12799",
+      "i-16629",
+      "i-53713",
+      "i-41925"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "vol-0035",
+    "type": "ebs_volume",
+    "region": "eu-west-1",
+    "monthly_cost": 146.29,
+    "created_at": "2024-10-04T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "owner": "team-backend"
+    },
+    "attached_to": "i-80236",
+    "state": "in-use",
+    "last_attached_days_ago": null,
+    "volume_type": "gp3",
+    "size_gb": 200,
+    "iops": 16000,
+    "throughput_mbps": 125,
+    "encrypted": false,
+    "kms_key_id": null,
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "vol-0079",
+    "type": "ebs_volume",
+    "region": "us-east-1",
+    "monthly_cost": 62.22,
+    "created_at": "2026-02-09T04:47:07Z",
+    "tags": {
+      "project": "beta",
+      "environment": "development",
+      "owner": "team-ml",
+      "data_sensitivity": "low"
+    },
+    "attached_to": "i-18270",
+    "state": "in-use",
+    "last_attached_days_ago": null,
+    "volume_type": "st1",
+    "size_gb": 1000,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:us-west-2:123456789012:key/mrk-1686",
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": true
+  },
+  {
+    "id": "vol-0033",
+    "type": "ebs_volume",
+    "region": "us-east-1",
+    "monthly_cost": 105.74,
+    "created_at": "2025-09-11T04:47:07Z",
+    "tags": {
+      "project": "beta",
+      "environment": "staging",
+      "owner": "team-backend"
+    },
+    "attached_to": "i-88139",
+    "state": "in-use",
+    "last_attached_days_ago": null,
+    "volume_type": "sc1",
+    "size_gb": 8,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:us-west-2:123456789012:key/mrk-7658",
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": true
+  },
+  {
+    "id": "vol-0094",
+    "type": "ebs_volume",
+    "region": "eu-west-1",
+    "monthly_cost": 120.78,
+    "created_at": "2024-10-22T04:47:07Z",
+    "tags": {
+      "environment": "development",
+      "owner": "team-data"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 260,
+    "volume_type": "sc1",
+    "size_gb": 200,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": false,
+    "kms_key_id": null,
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "vol-0049",
+    "type": "ebs_volume",
+    "region": "us-west-2",
+    "monthly_cost": 102.05,
+    "created_at": "2024-08-05T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "owner": "team-data"
+    },
+    "attached_to": "i-20350",
+    "state": "in-use",
+    "last_attached_days_ago": null,
+    "volume_type": "sc1",
+    "size_gb": 20,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:us-west-2:123456789012:key/mrk-8555",
+    "snapshot_id": "snap-70236",
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "s3-0009",
+    "name": "bucket-backups-0009",
+    "type": "s3_bucket",
+    "region": "ap-southeast-1",
+    "monthly_cost": 173.71,
+    "created_at": "2025-07-20T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "environment": "staging",
+      "contains_pii": "true"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": null,
+    "versioning_enabled": true,
+    "mfa_delete_enabled": true,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 9520.6,
+    "object_count": 813115,
+    "storage_class": "GLACIER",
+    "last_accessed_days_ago": 181
+  },
+  {
+    "id": "vol-0065",
+    "type": "ebs_volume",
+    "region": "eu-west-1",
+    "monthly_cost": 19.05,
+    "created_at": "2026-02-10T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "owner": "team-data"
+    },
+    "attached_to": "i-79806",
+    "state": "in-use",
+    "last_attached_days_ago": null,
+    "volume_type": "sc1",
+    "size_gb": 100,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": false,
+    "kms_key_id": null,
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": true
+  },
+  {
+    "id": "sg-0057",
+    "name": "sg-custom-0057",
+    "type": "security_group",
+    "region": "us-east-1",
+    "monthly_cost": 0.0,
+    "created_at": "2025-11-11T04:47:07Z",
+    "tags": {
+      "data_sensitivity": "medium"
+    },
+    "vpc_id": "vpc-11947",
+    "description": "app tier",
+    "inbound_rules": [
+      {
+        "from_port": 22,
+        "to_port": 22,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": "Allow port 22"
+      },
+      {
+        "from_port": 5432,
+        "to_port": 5432,
+        "protocol": "tcp",
+        "cidr_ipv4": "172.16.0.0/12",
+        "cidr_ipv6": null,
+        "description": "Allow port 5432"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-24408"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "vol-0088",
+    "type": "ebs_volume",
+    "region": "us-east-1",
+    "monthly_cost": 20.84,
+    "created_at": "2024-06-07T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "environment": "production",
+      "owner": "team-data"
+    },
+    "attached_to": "i-91851",
+    "state": "in-use",
+    "last_attached_days_ago": null,
+    "volume_type": "io1",
+    "size_gb": 1000,
+    "iops": 3000,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:ap-southeast-1:123456789012:key/mrk-5336",
+    "snapshot_id": "snap-84991",
+    "multi_attach_enabled": false,
+    "delete_on_termination": true
+  },
+  {
+    "id": "s3-0014",
+    "name": "bucket-assets-0014",
+    "type": "s3_bucket",
+    "region": "us-east-1",
+    "monthly_cost": 23.83,
+    "created_at": "2025-08-19T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "owner": "team-ml",
+      "contains_pii": "true"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": null,
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 6622.9,
+    "object_count": 2927699,
+    "storage_class": "STANDARD",
+    "last_accessed_days_ago": 125
+  },
+  {
+    "id": "sg-0061",
+    "name": "sg-custom-0061",
+    "type": "security_group",
+    "region": "ap-south-1",
+    "monthly_cost": 0.0,
+    "created_at": "2025-08-08T04:47:07Z",
+    "tags": {
+      "environment": "production",
+      "owner": "team-ml",
+      "data_sensitivity": "high"
+    },
+    "vpc_id": "vpc-24184",
+    "description": "app tier",
+    "inbound_rules": [
+      {
+        "from_port": 8443,
+        "to_port": 8443,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": null
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-76507",
+      "i-37884",
+      "i-30280",
+      "i-96079"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "sg-0071",
+    "name": "sg-custom-0071",
+    "type": "security_group",
+    "region": "eu-west-1",
+    "monthly_cost": 0.0,
+    "created_at": "2024-11-13T04:47:07Z",
+    "tags": {
+      "project": "beta",
+      "environment": "development",
+      "owner": "team-backend"
+    },
+    "vpc_id": "vpc-35166",
+    "description": "web tier",
+    "inbound_rules": [
+      {
+        "from_port": 8443,
+        "to_port": 8443,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 80,
+        "to_port": 80,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": "Allow port 80"
+      },
+      {
+        "from_port": 8080,
+        "to_port": 8080,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": "Allow port 8080"
+      },
+      {
+        "from_port": 80,
+        "to_port": 80,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": null
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-33627",
+      "i-38074"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "vol-0066",
+    "type": "ebs_volume",
+    "region": "eu-west-1",
+    "monthly_cost": 22.19,
+    "created_at": "2025-12-07T04:47:07Z",
+    "tags": {
+      "environment": "staging",
+      "owner": "team-ml"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 124,
+    "volume_type": "gp3",
+    "size_gb": 100,
+    "iops": 16000,
+    "throughput_mbps": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:ap-southeast-1:123456789012:key/mrk-7560",
+    "snapshot_id": "snap-61873",
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "s3-0052",
+    "name": "bucket-archive-0052",
+    "type": "s3_bucket",
+    "region": "ap-south-1",
+    "monthly_cost": 54.34,
+    "created_at": "2025-11-10T04:47:07Z",
+    "tags": {
+      "project": "beta",
+      "environment": "development",
+      "owner": "team-backend",
+      "data_sensitivity": "low"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "aws:kms",
+    "versioning_enabled": true,
+    "mfa_delete_enabled": true,
+    "logging_enabled": false,
+    "ssl_requests_only": true,
+    "size_gb": 18292.9,
+    "object_count": 4209360,
+    "storage_class": "INTELLIGENT_TIERING",
+    "last_accessed_days_ago": 84
+  },
+  {
+    "id": "vol-0015",
+    "type": "ebs_volume",
+    "region": "eu-west-1",
+    "monthly_cost": 186.69,
+    "created_at": "2025-12-09T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "owner": "team-backend",
+      "data_sensitivity": "high"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 68,
+    "volume_type": "sc1",
+    "size_gb": 50,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:us-east-1:123456789012:key/mrk-2753",
+    "snapshot_id": "snap-30374",
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "s3-0044",
+    "name": "bucket-assets-0044",
+    "type": "s3_bucket",
+    "region": "us-west-2",
+    "monthly_cost": 138.12,
+    "created_at": "2025-10-28T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "environment": "production",
+      "owner": "team-data",
+      "data_sensitivity": "high"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "aws:kms",
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 46093.4,
+    "object_count": 4263434,
+    "storage_class": "STANDARD_IA",
+    "last_accessed_days_ago": 35
+  },
+  {
+    "id": "s3-0030",
+    "name": "bucket-logs-0030",
+    "type": "s3_bucket",
+    "region": "us-west-2",
+    "monthly_cost": 32.37,
+    "created_at": "2025-05-21T04:47:07Z",
+    "tags": {
+      "data_sensitivity": "medium"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": null,
+    "versioning_enabled": true,
+    "mfa_delete_enabled": true,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 6052.8,
+    "object_count": 4747387,
+    "storage_class": "STANDARD",
+    "last_accessed_days_ago": 177
+  },
+  {
+    "id": "sg-0008",
+    "name": "sg-custom-0008",
+    "type": "security_group",
+    "region": "us-east-1",
+    "monthly_cost": 0.0,
+    "created_at": "2024-03-31T04:47:07Z",
+    "tags": {
+      "environment": "production",
+      "owner": "team-data"
+    },
+    "vpc_id": "vpc-92719",
+    "description": "default VPC security group",
+    "inbound_rules": [
+      {
+        "from_port": 3306,
+        "to_port": 3306,
+        "protocol": "tcp",
+        "cidr_ipv4": "172.16.0.0/12",
+        "cidr_ipv6": null,
+        "description": "Allow port 3306"
+      },
+      {
+        "from_port": 80,
+        "to_port": 80,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": "Allow port 80"
+      },
+      {
+        "from_port": 8080,
+        "to_port": 8080,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 3306,
+        "to_port": 3306,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 8443,
+        "to_port": 8443,
+        "protocol": "tcp",
+        "cidr_ipv4": "172.16.0.0/12",
+        "cidr_ipv6": null,
+        "description": "Allow port 8443"
+      },
+      {
+        "from_port": -1,
+        "to_port": -1,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": null
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": true,
+    "attached_to_instances": [],
+    "is_unused": true
+  },
+  {
+    "id": "vol-0054",
+    "type": "ebs_volume",
+    "region": "eu-west-1",
+    "monthly_cost": 183.47,
+    "created_at": "2025-08-11T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "environment": "development",
+      "owner": "team-infra",
+      "data_sensitivity": "medium"
+    },
+    "attached_to": "i-13280",
+    "state": "in-use",
+    "last_attached_days_ago": null,
+    "volume_type": "sc1",
+    "size_gb": 500,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:us-east-1:123456789012:key/mrk-8606",
+    "snapshot_id": "snap-49608",
+    "multi_attach_enabled": false,
+    "delete_on_termination": true
+  },
+  {
+    "id": "sg-0006",
+    "name": "sg-custom-0006",
+    "type": "security_group",
+    "region": "eu-west-1",
+    "monthly_cost": 0.0,
+    "created_at": "2024-06-09T04:47:07Z",
+    "tags": {
+      "environment": "production",
+      "owner": "team-infra",
+      "data_sensitivity": "high"
+    },
+    "vpc_id": "vpc-76540",
+    "description": "bastion host",
+    "inbound_rules": [
+      {
+        "from_port": 27017,
+        "to_port": 27017,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 5432,
+        "to_port": 5432,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 6379,
+        "to_port": 6379,
+        "protocol": "tcp",
+        "cidr_ipv4": "172.16.0.0/12",
+        "cidr_ipv6": null,
+        "description": "Allow port 6379"
+      },
+      {
+        "from_port": 22,
+        "to_port": 22,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "SSH access"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": true,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [],
+    "is_unused": true
+  },
+  {
+    "id": "vol-0090",
+    "type": "ebs_volume",
+    "region": "us-east-1",
+    "monthly_cost": 14.87,
+    "created_at": "2025-02-25T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "environment": "production",
+      "owner": "team-infra"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 315,
+    "volume_type": "gp3",
+    "size_gb": 100,
+    "iops": 6000,
+    "throughput_mbps": 125,
+    "encrypted": false,
+    "kms_key_id": null,
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "vol-0005",
+    "type": "ebs_volume",
+    "region": "ap-southeast-1",
+    "monthly_cost": 17.39,
+    "created_at": "2025-02-28T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "owner": "team-ml"
+    },
+    "attached_to": "i-99192",
+    "state": "in-use",
+    "last_attached_days_ago": null,
+    "volume_type": "gp3",
+    "size_gb": 200,
+    "iops": 16000,
+    "throughput_mbps": 125,
+    "encrypted": false,
+    "kms_key_id": null,
+    "snapshot_id": "snap-79352",
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "s3-0020",
+    "name": "bucket-assets-0020",
+    "type": "s3_bucket",
+    "region": "ap-south-1",
+    "monthly_cost": 2.5,
+    "created_at": "2024-09-20T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "owner": "team-backend",
+      "data_sensitivity": "high"
+    },
+    "is_public": true,
+    "public_access_block": false,
+    "acl": "public-read",
+    "encryption": "aws:kms",
+    "versioning_enabled": true,
+    "mfa_delete_enabled": true,
+    "logging_enabled": false,
+    "ssl_requests_only": true,
+    "size_gb": 36851.9,
+    "object_count": 1652851,
+    "storage_class": "INTELLIGENT_TIERING",
+    "last_accessed_days_ago": 220
+  },
+  {
+    "id": "vol-0032",
+    "type": "ebs_volume",
+    "region": "ap-southeast-1",
+    "monthly_cost": 124.01,
+    "created_at": "2025-03-02T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "development",
+      "data_sensitivity": "low"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 172,
+    "volume_type": "st1",
+    "size_gb": 8,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": false,
+    "kms_key_id": null,
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "vol-0027",
+    "type": "ebs_volume",
+    "region": "ap-southeast-1",
+    "monthly_cost": 115.06,
+    "created_at": "2026-02-26T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "environment": "development",
+      "owner": "team-ml",
+      "data_sensitivity": "medium"
+    },
+    "attached_to": "i-26728",
+    "state": "in-use",
+    "last_attached_days_ago": null,
+    "volume_type": "st1",
+    "size_gb": 8,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:ap-south-1:123456789012:key/mrk-3223",
+    "snapshot_id": "snap-33819",
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "s3-0099",
+    "name": "bucket-backups-0099",
+    "type": "s3_bucket",
+    "region": "us-west-2",
+    "monthly_cost": 3.54,
+    "created_at": "2024-09-08T04:47:07Z",
+    "tags": {
+      "project": "beta",
+      "owner": "team-data",
+      "data_sensitivity": "low"
+    },
+    "is_public": true,
+    "public_access_block": false,
+    "acl": "public-read",
+    "encryption": "AES256",
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 7897.1,
+    "object_count": 3990458,
+    "storage_class": "GLACIER",
+    "last_accessed_days_ago": 333
+  },
+  {
+    "id": "s3-0040",
+    "name": "bucket-archive-0040",
+    "type": "s3_bucket",
+    "region": "ap-south-1",
+    "monthly_cost": 25.97,
+    "created_at": "2026-02-13T04:47:07Z",
+    "tags": {
+      "project": "beta",
+      "environment": "development",
+      "owner": "team-backend",
+      "data_sensitivity": "medium"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": null,
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 36726.7,
+    "object_count": 2100239,
+    "storage_class": "STANDARD",
+    "last_accessed_days_ago": 46
+  },
+  {
+    "id": "vol-0039",
+    "type": "ebs_volume",
+    "region": "us-west-2",
+    "monthly_cost": 87.9,
+    "created_at": "2024-09-14T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "owner": "team-ml"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 115,
+    "volume_type": "sc1",
+    "size_gb": 500,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:us-west-2:123456789012:key/mrk-5352",
+    "snapshot_id": "snap-19359",
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "vol-0085",
+    "type": "ebs_volume",
+    "region": "us-east-1",
+    "monthly_cost": 75.37,
+    "created_at": "2024-08-16T04:47:07Z",
+    "tags": {
+      "project": "beta",
+      "environment": "development",
+      "owner": "team-backend",
+      "data_sensitivity": "low"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 188,
+    "volume_type": "st1",
+    "size_gb": 100,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": false,
+    "kms_key_id": null,
+    "snapshot_id": "snap-82305",
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "vol-0012",
+    "type": "ebs_volume",
+    "region": "ap-southeast-1",
+    "monthly_cost": 16.89,
+    "created_at": "2025-05-08T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "development",
+      "owner": "team-ml"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 29,
+    "volume_type": "sc1",
+    "size_gb": 8,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:ap-southeast-1:123456789012:key/mrk-8811",
+    "snapshot_id": "snap-79615",
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "vol-0043",
+    "type": "ebs_volume",
+    "region": "us-west-2",
+    "monthly_cost": 143.41,
+    "created_at": "2025-05-11T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "owner": "team-backend",
+      "data_sensitivity": "high"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 282,
+    "volume_type": "sc1",
+    "size_gb": 8,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": false,
+    "kms_key_id": null,
+    "snapshot_id": "snap-22217",
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "vol-0075",
+    "type": "ebs_volume",
+    "region": "eu-west-1",
+    "monthly_cost": 50.98,
+    "created_at": "2026-01-01T04:47:07Z",
+    "tags": {
+      "project": "beta",
+      "environment": "production",
+      "owner": "team-data",
+      "data_sensitivity": "medium"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 191,
+    "volume_type": "sc1",
+    "size_gb": 20,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": false,
+    "kms_key_id": null,
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "sg-0018",
+    "name": "sg-custom-0018",
+    "type": "security_group",
+    "region": "ap-south-1",
+    "monthly_cost": 0.0,
+    "created_at": "2026-02-14T04:47:07Z",
+    "tags": {
+      "project": "beta",
+      "environment": "production",
+      "owner": "team-data",
+      "data_sensitivity": "low"
+    },
+    "vpc_id": "vpc-71694",
+    "description": "web tier",
+    "inbound_rules": [
+      {
+        "from_port": 27017,
+        "to_port": 27017,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": "Allow port 27017"
+      },
+      {
+        "from_port": 3306,
+        "to_port": 3306,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": null
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [],
+    "is_unused": true
+  },
+  {
+    "id": "s3-0060",
+    "name": "bucket-logs-0060",
+    "type": "s3_bucket",
+    "region": "us-east-1",
+    "monthly_cost": 29.18,
+    "created_at": "2025-12-28T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "staging",
+      "owner": "team-infra"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": null,
+    "versioning_enabled": true,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": false,
+    "size_gb": 36939.8,
+    "object_count": 1091488,
+    "storage_class": "STANDARD",
+    "last_accessed_days_ago": 300
+  },
+  {
+    "id": "s3-0047",
+    "name": "bucket-reports-0047",
+    "type": "s3_bucket",
+    "region": "ap-south-1",
+    "monthly_cost": 195.65,
+    "created_at": "2025-04-23T04:47:07Z",
+    "tags": {
+      "environment": "production",
+      "owner": "team-ml",
+      "data_sensitivity": "low"
+    },
+    "is_public": true,
+    "public_access_block": false,
+    "acl": "public-read",
+    "encryption": "aws:kms",
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 42967.1,
+    "object_count": 3187750,
+    "storage_class": "INTELLIGENT_TIERING",
+    "last_accessed_days_ago": 320
+  },
+  {
+    "id": "s3-0000",
+    "name": "bucket-logs-0000",
+    "type": "s3_bucket",
+    "region": "us-east-1",
+    "monthly_cost": 29.92,
+    "created_at": "2025-07-30T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "contains_pii": "true"
+    },
+    "is_public": true,
+    "public_access_block": false,
+    "acl": "public-read",
+    "encryption": null,
+    "versioning_enabled": true,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": false,
+    "size_gb": 9942.0,
+    "object_count": 4571301,
+    "storage_class": "GLACIER",
+    "last_accessed_days_ago": 112
+  },
+  {
+    "id": "sg-0092",
+    "name": "sg-custom-0092",
+    "type": "security_group",
+    "region": "ap-south-1",
+    "monthly_cost": 0.0,
+    "created_at": "2024-10-25T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "production",
+      "owner": "team-ml"
+    },
+    "vpc_id": "vpc-69028",
+    "description": "bastion host",
+    "inbound_rules": [
+      {
+        "from_port": 27017,
+        "to_port": 27017,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 80,
+        "to_port": 80,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": "Allow port 80"
+      },
+      {
+        "from_port": 3306,
+        "to_port": 3306,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": "Allow port 3306"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [],
+    "is_unused": true
+  },
+  {
+    "id": "vol-0045",
+    "type": "ebs_volume",
+    "region": "us-west-2",
+    "monthly_cost": 92.08,
+    "created_at": "2024-11-15T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "development"
+    },
+    "attached_to": "i-49132",
+    "state": "in-use",
+    "last_attached_days_ago": null,
+    "volume_type": "st1",
+    "size_gb": 50,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-west-1:123456789012:key/mrk-9903",
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": true
+  },
+  {
+    "id": "s3-0016",
+    "name": "bucket-archive-0016",
+    "type": "s3_bucket",
+    "region": "eu-west-1",
+    "monthly_cost": 15.14,
+    "created_at": "2025-04-18T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "environment": "development",
+      "data_sensitivity": "medium"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "AES256",
+    "versioning_enabled": true,
+    "mfa_delete_enabled": true,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 13097.8,
+    "object_count": 3706385,
+    "storage_class": "GLACIER",
+    "last_accessed_days_ago": 287
+  },
+  {
+    "id": "vol-0098",
+    "type": "ebs_volume",
+    "region": "us-west-2",
+    "monthly_cost": 44.4,
+    "created_at": "2024-09-20T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "environment": "production"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 138,
+    "volume_type": "io1",
+    "size_gb": 200,
+    "iops": 16000,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-west-1:123456789012:key/mrk-3249",
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "vol-0089",
+    "type": "ebs_volume",
+    "region": "ap-south-1",
+    "monthly_cost": 99.43,
+    "created_at": "2025-08-29T04:47:07Z",
+    "tags": {
+      "environment": "staging",
+      "owner": "team-ml"
+    },
+    "attached_to": "i-19564",
+    "state": "in-use",
+    "last_attached_days_ago": null,
+    "volume_type": "st1",
+    "size_gb": 50,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": false,
+    "kms_key_id": null,
+    "snapshot_id": "snap-50970",
+    "multi_attach_enabled": false,
+    "delete_on_termination": true
+  },
+  {
+    "id": "s3-0046",
+    "name": "bucket-archive-0046",
+    "type": "s3_bucket",
+    "region": "us-west-2",
+    "monthly_cost": 149.61,
+    "created_at": "2026-02-16T04:47:07Z",
+    "tags": {
+      "project": "beta",
+      "environment": "production",
+      "owner": "team-ml"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "aws:kms",
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": false,
+    "size_gb": 48267.7,
+    "object_count": 2784974,
+    "storage_class": "STANDARD",
+    "last_accessed_days_ago": 225
+  },
+  {
+    "id": "vol-0010",
+    "type": "ebs_volume",
+    "region": "us-west-2",
+    "monthly_cost": 42.36,
+    "created_at": "2024-09-22T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "development",
+      "data_sensitivity": "high"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 229,
+    "volume_type": "io1",
+    "size_gb": 20,
+    "iops": 3000,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:ap-south-1:123456789012:key/mrk-4006",
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "s3-0021",
+    "name": "bucket-backups-0021",
+    "type": "s3_bucket",
+    "region": "ap-south-1",
+    "monthly_cost": 200.15,
+    "created_at": "2025-03-02T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "environment": "development",
+      "owner": "team-backend",
+      "data_sensitivity": "high"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": null,
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": false,
+    "ssl_requests_only": true,
+    "size_gb": 45140.3,
+    "object_count": 4774001,
+    "storage_class": "INTELLIGENT_TIERING",
+    "last_accessed_days_ago": 207
+  },
+  {
+    "id": "vol-0093",
+    "type": "ebs_volume",
+    "region": "us-west-2",
+    "monthly_cost": 122.48,
+    "created_at": "2025-02-07T04:47:07Z",
+    "tags": {
+      "environment": "production"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 256,
+    "volume_type": "io1",
+    "size_gb": 8,
+    "iops": 6000,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:us-east-1:123456789012:key/mrk-1637",
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "vol-0051",
+    "type": "ebs_volume",
+    "region": "ap-southeast-1",
+    "monthly_cost": 150.31,
+    "created_at": "2025-06-05T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "owner": "team-ml"
+    },
+    "attached_to": "i-84177",
+    "state": "in-use",
+    "last_attached_days_ago": null,
+    "volume_type": "gp2",
+    "size_gb": 1000,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:us-west-2:123456789012:key/mrk-6772",
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "s3-0024",
+    "name": "bucket-logs-0024",
+    "type": "s3_bucket",
+    "region": "ap-southeast-1",
+    "monthly_cost": 129.17,
+    "created_at": "2024-09-10T04:47:07Z",
+    "tags": {
+      "environment": "development",
+      "data_sensitivity": "medium"
+    },
+    "is_public": true,
+    "public_access_block": false,
+    "acl": "public-read",
+    "encryption": "aws:kms",
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 7958.0,
+    "object_count": 3981858,
+    "storage_class": "GLACIER",
+    "last_accessed_days_ago": 132
+  },
+  {
+    "id": "sg-0034",
+    "name": "sg-custom-0034",
+    "type": "security_group",
+    "region": "eu-west-1",
+    "monthly_cost": 0.0,
+    "created_at": "2025-03-30T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "staging",
+      "owner": "team-infra"
+    },
+    "vpc_id": "vpc-69473",
+    "description": "app tier",
+    "inbound_rules": [
+      {
+        "from_port": 3306,
+        "to_port": 3306,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": "Allow port 3306"
+      },
+      {
+        "from_port": 27017,
+        "to_port": 27017,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": "Allow port 27017"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-65771",
+      "i-82140"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "sg-0059",
+    "name": "sg-custom-0059",
+    "type": "security_group",
+    "region": "ap-southeast-1",
+    "monthly_cost": 0.0,
+    "created_at": "2025-08-17T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "owner": "team-ml",
+      "data_sensitivity": "low"
+    },
+    "vpc_id": "vpc-66370",
+    "description": "db tier",
+    "inbound_rules": [
+      {
+        "from_port": 443,
+        "to_port": 443,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": "Allow port 443"
+      },
+      {
+        "from_port": 27017,
+        "to_port": 27017,
+        "protocol": "tcp",
+        "cidr_ipv4": "172.16.0.0/12",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 6379,
+        "to_port": 6379,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 8443,
+        "to_port": 8443,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": "Allow port 8443"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-66387",
+      "i-22999",
+      "i-24996",
+      "i-95814"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "s3-0064",
+    "name": "bucket-archive-0064",
+    "type": "s3_bucket",
+    "region": "ap-southeast-1",
+    "monthly_cost": 18.33,
+    "created_at": "2025-08-28T04:47:07Z",
+    "tags": {
+      "project": "beta",
+      "environment": "production"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "AES256",
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": false,
+    "ssl_requests_only": true,
+    "size_gb": 10561.8,
+    "object_count": 1151209,
+    "storage_class": "INTELLIGENT_TIERING",
+    "last_accessed_days_ago": 148
+  },
+  {
+    "id": "s3-0017",
+    "name": "bucket-reports-0017",
+    "type": "s3_bucket",
+    "region": "us-east-1",
+    "monthly_cost": 269.88,
+    "created_at": "2025-08-22T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "owner": "team-data",
+      "data_sensitivity": "medium",
+      "contains_pii": "true"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "AES256",
+    "versioning_enabled": true,
+    "mfa_delete_enabled": true,
+    "logging_enabled": false,
+    "ssl_requests_only": true,
+    "size_gb": 17684.0,
+    "object_count": 4696644,
+    "storage_class": "GLACIER",
+    "last_accessed_days_ago": 317
+  },
+  {
+    "id": "sg-0081",
+    "name": "sg-custom-0081",
+    "type": "security_group",
+    "region": "eu-west-1",
+    "monthly_cost": 0.0,
+    "created_at": "2024-07-04T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "development"
+    },
+    "vpc_id": "vpc-67008",
+    "description": "app tier",
+    "inbound_rules": [
+      {
+        "from_port": 80,
+        "to_port": 80,
+        "protocol": "tcp",
+        "cidr_ipv4": "172.16.0.0/12",
+        "cidr_ipv6": null,
+        "description": "Allow port 80"
+      },
+      {
+        "from_port": 27017,
+        "to_port": 27017,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 6379,
+        "to_port": 6379,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": "Allow port 6379"
+      },
+      {
+        "from_port": 80,
+        "to_port": 80,
+        "protocol": "tcp",
+        "cidr_ipv4": "172.16.0.0/12",
+        "cidr_ipv6": null,
+        "description": "Allow port 80"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-68606",
+      "i-15551"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "vol-0067",
+    "type": "ebs_volume",
+    "region": "us-west-2",
+    "monthly_cost": 51.07,
+    "created_at": "2025-10-27T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "owner": "team-infra",
+      "data_sensitivity": "low"
+    },
+    "attached_to": "i-79547",
+    "state": "in-use",
+    "last_attached_days_ago": null,
+    "volume_type": "io1",
+    "size_gb": 50,
+    "iops": 10000,
+    "throughput_mbps": null,
+    "encrypted": false,
+    "kms_key_id": null,
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": true
+  },
+  {
+    "id": "sg-0069",
+    "name": "sg-custom-0069",
+    "type": "security_group",
+    "region": "us-west-2",
+    "monthly_cost": 0.0,
+    "created_at": "2026-02-13T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "environment": "development",
+      "owner": "team-infra",
+      "data_sensitivity": "high"
+    },
+    "vpc_id": "vpc-42472",
+    "description": "internal services",
+    "inbound_rules": [
+      {
+        "from_port": 8443,
+        "to_port": 8443,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": "Allow port 8443"
+      },
+      {
+        "from_port": 22,
+        "to_port": 22,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": null
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": true,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-21053",
+      "i-76132"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "s3-0058",
+    "name": "bucket-archive-0058",
+    "type": "s3_bucket",
+    "region": "eu-west-1",
+    "monthly_cost": 154.94,
+    "created_at": "2025-12-04T04:47:07Z",
+    "tags": {
+      "environment": "production",
+      "contains_pii": "true"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "aws:kms",
+    "versioning_enabled": true,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": false,
+    "size_gb": 30755.4,
+    "object_count": 4374250,
+    "storage_class": "INTELLIGENT_TIERING",
+    "last_accessed_days_ago": 234
+  },
+  {
+    "id": "sg-0095",
+    "name": "sg-custom-0095",
+    "type": "security_group",
+    "region": "us-east-1",
+    "monthly_cost": 0.0,
+    "created_at": "2024-08-16T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "environment": "production",
+      "owner": "team-infra",
+      "data_sensitivity": "high"
+    },
+    "vpc_id": "vpc-24404",
+    "description": "web tier",
+    "inbound_rules": [
+      {
+        "from_port": 22,
+        "to_port": 22,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 8443,
+        "to_port": 8443,
+        "protocol": "tcp",
+        "cidr_ipv4": "172.16.0.0/12",
+        "cidr_ipv6": null,
+        "description": "Allow port 8443"
+      },
+      {
+        "from_port": 8443,
+        "to_port": 8443,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": null
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": true,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-59832",
+      "i-29369",
+      "i-99224",
+      "i-41745"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "sg-0042",
+    "name": "sg-custom-0042",
+    "type": "security_group",
+    "region": "eu-west-1",
+    "monthly_cost": 0.0,
+    "created_at": "2024-06-26T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "environment": "staging",
+      "owner": "team-ml"
+    },
+    "vpc_id": "vpc-75338",
+    "description": "internal services",
+    "inbound_rules": [
+      {
+        "from_port": 22,
+        "to_port": 22,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 6379,
+        "to_port": 6379,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 80,
+        "to_port": 80,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": "Allow port 80"
+      },
+      {
+        "from_port": 8080,
+        "to_port": 8080,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": "Allow port 8080"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": true,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-77952"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "s3-0013",
+    "name": "bucket-data-0013",
+    "type": "s3_bucket",
+    "region": "ap-southeast-1",
+    "monthly_cost": 26.43,
+    "created_at": "2024-05-21T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "environment": "production",
+      "owner": "team-infra",
+      "data_sensitivity": "high"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": null,
+    "versioning_enabled": true,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 46735.3,
+    "object_count": 1713451,
+    "storage_class": "INTELLIGENT_TIERING",
+    "last_accessed_days_ago": 122
+  },
+  {
+    "id": "s3-0072",
+    "name": "bucket-logs-0072",
+    "type": "s3_bucket",
+    "region": "ap-southeast-1",
+    "monthly_cost": 41.05,
+    "created_at": "2025-03-05T04:47:07Z",
+    "tags": {
+      "project": "beta",
+      "owner": "team-infra",
+      "data_sensitivity": "high"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": null,
+    "versioning_enabled": true,
+    "mfa_delete_enabled": false,
+    "logging_enabled": false,
+    "ssl_requests_only": false,
+    "size_gb": 34642.3,
+    "object_count": 1388644,
+    "storage_class": "GLACIER",
+    "last_accessed_days_ago": 22
+  },
+  {
+    "id": "vol-0038",
+    "type": "ebs_volume",
+    "region": "us-west-2",
+    "monthly_cost": 51.77,
+    "created_at": "2024-09-06T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "environment": "staging",
+      "data_sensitivity": "high"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 38,
+    "volume_type": "io1",
+    "size_gb": 20,
+    "iops": 3000,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:us-east-1:123456789012:key/mrk-7693",
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "s3-0001",
+    "name": "bucket-data-0001",
+    "type": "s3_bucket",
+    "region": "us-east-1",
+    "monthly_cost": 108.98,
+    "created_at": "2025-04-07T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "production",
+      "owner": "team-data",
+      "data_sensitivity": "medium"
+    },
+    "is_public": true,
+    "public_access_block": false,
+    "acl": "public-read",
+    "encryption": "AES256",
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": false,
+    "ssl_requests_only": true,
+    "size_gb": 40356.4,
+    "object_count": 3853936,
+    "storage_class": "STANDARD",
+    "last_accessed_days_ago": 193
+  },
+  {
+    "id": "s3-0091",
+    "name": "bucket-data-0091",
+    "type": "s3_bucket",
+    "region": "ap-south-1",
+    "monthly_cost": 152.62,
+    "created_at": "2025-07-22T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "environment": "development",
+      "data_sensitivity": "medium"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "aws:kms",
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": false,
+    "ssl_requests_only": false,
+    "size_gb": 17644.8,
+    "object_count": 423964,
+    "storage_class": "INTELLIGENT_TIERING",
+    "last_accessed_days_ago": 253
+  },
+  {
+    "id": "s3-0037",
+    "name": "bucket-data-0037",
+    "type": "s3_bucket",
+    "region": "ap-southeast-1",
+    "monthly_cost": 284.84,
+    "created_at": "2025-12-28T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "environment": "staging"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "AES256",
+    "versioning_enabled": true,
+    "mfa_delete_enabled": true,
+    "logging_enabled": false,
+    "ssl_requests_only": false,
+    "size_gb": 38222.2,
+    "object_count": 1893201,
+    "storage_class": "GLACIER",
+    "last_accessed_days_ago": 230
+  },
+  {
+    "id": "s3-0023",
+    "name": "bucket-reports-0023",
+    "type": "s3_bucket",
+    "region": "us-west-2",
+    "monthly_cost": 197.51,
+    "created_at": "2026-03-20T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "owner": "team-infra",
+      "data_sensitivity": "high"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "aws:kms",
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": false,
+    "ssl_requests_only": true,
+    "size_gb": 43022.0,
+    "object_count": 894120,
+    "storage_class": "GLACIER",
+    "last_accessed_days_ago": 112
+  },
+  {
+    "id": "vol-0063",
+    "type": "ebs_volume",
+    "region": "ap-southeast-1",
+    "monthly_cost": 14.7,
+    "created_at": "2026-01-01T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "production",
+      "owner": "team-backend",
+      "data_sensitivity": "high"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 139,
+    "volume_type": "gp3",
+    "size_gb": 100,
+    "iops": 6000,
+    "throughput_mbps": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:ap-south-1:123456789012:key/mrk-8957",
+    "snapshot_id": "snap-64287",
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "s3-0050",
+    "name": "bucket-assets-0050",
+    "type": "s3_bucket",
+    "region": "eu-west-1",
+    "monthly_cost": 61.37,
+    "created_at": "2025-02-25T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "development",
+      "owner": "team-infra",
+      "data_sensitivity": "medium"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": null,
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": false,
+    "ssl_requests_only": true,
+    "size_gb": 5332.8,
+    "object_count": 3199116,
+    "storage_class": "INTELLIGENT_TIERING",
+    "last_accessed_days_ago": 294
+  },
+  {
+    "id": "s3-0087",
+    "name": "bucket-backups-0087",
+    "type": "s3_bucket",
+    "region": "ap-southeast-1",
+    "monthly_cost": 268.69,
+    "created_at": "2026-01-04T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "production",
+      "owner": "team-data"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "aws:kms",
+    "versioning_enabled": true,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 27542.1,
+    "object_count": 1050005,
+    "storage_class": "INTELLIGENT_TIERING",
+    "last_accessed_days_ago": 314
+  },
+  {
+    "id": "s3-0086",
+    "name": "bucket-assets-0086",
+    "type": "s3_bucket",
+    "region": "eu-west-1",
+    "monthly_cost": 193.42,
+    "created_at": "2024-12-20T04:47:07Z",
+    "tags": {
+      "environment": "production",
+      "data_sensitivity": "high"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": null,
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": false,
+    "ssl_requests_only": true,
+    "size_gb": 25868.0,
+    "object_count": 1076549,
+    "storage_class": "STANDARD_IA",
+    "last_accessed_days_ago": 393
+  },
+  {
+    "id": "s3-0053",
+    "name": "bucket-reports-0053",
+    "type": "s3_bucket",
+    "region": "ap-south-1",
+    "monthly_cost": 290.25,
+    "created_at": "2024-09-01T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "staging",
+      "owner": "team-backend",
+      "data_sensitivity": "medium",
+      "contains_pii": "true"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": null,
+    "versioning_enabled": true,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 696.0,
+    "object_count": 4501095,
+    "storage_class": "STANDARD",
+    "last_accessed_days_ago": 232
+  },
+  {
+    "id": "sg-0022",
+    "name": "sg-custom-0022",
+    "type": "security_group",
+    "region": "eu-west-1",
+    "monthly_cost": 0.0,
+    "created_at": "2025-08-07T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "environment": "production",
+      "owner": "team-backend",
+      "data_sensitivity": "medium"
+    },
+    "vpc_id": "vpc-36100",
+    "description": "web tier",
+    "inbound_rules": [
+      {
+        "from_port": 443,
+        "to_port": 443,
+        "protocol": "tcp",
+        "cidr_ipv4": "172.16.0.0/12",
+        "cidr_ipv6": null,
+        "description": "Allow port 443"
+      },
+      {
+        "from_port": 6379,
+        "to_port": 6379,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": null
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-98184"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "vol-0004",
+    "type": "ebs_volume",
+    "region": "us-west-2",
+    "monthly_cost": 56.65,
+    "created_at": "2025-07-16T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "owner": "team-backend"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 287,
+    "volume_type": "st1",
+    "size_gb": 200,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-west-1:123456789012:key/mrk-8019",
+    "snapshot_id": "snap-62350",
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "sg-0068",
+    "name": "sg-custom-0068",
+    "type": "security_group",
+    "region": "us-east-1",
+    "monthly_cost": 0.0,
+    "created_at": "2025-03-13T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "owner": "team-ml",
+      "data_sensitivity": "high"
+    },
+    "vpc_id": "vpc-47627",
+    "description": "default VPC security group",
+    "inbound_rules": [
+      {
+        "from_port": 8443,
+        "to_port": 8443,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": "Allow port 8443"
+      },
+      {
+        "from_port": 27017,
+        "to_port": 27017,
+        "protocol": "tcp",
+        "cidr_ipv4": "172.16.0.0/12",
+        "cidr_ipv6": null,
+        "description": "Allow port 27017"
+      },
+      {
+        "from_port": 443,
+        "to_port": 443,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": "Allow port 443"
+      },
+      {
+        "from_port": 6379,
+        "to_port": 6379,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 3389,
+        "to_port": 3389,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": "Allow port 3389"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [],
+    "is_unused": true
+  },
+  {
+    "id": "s3-0029",
+    "name": "bucket-reports-0029",
+    "type": "s3_bucket",
+    "region": "ap-south-1",
+    "monthly_cost": 210.44,
+    "created_at": "2025-03-13T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "environment": "production",
+      "contains_pii": "true"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": null,
+    "versioning_enabled": true,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 37396.3,
+    "object_count": 960772,
+    "storage_class": "STANDARD_IA",
+    "last_accessed_days_ago": 159
+  },
+  {
+    "id": "vol-0073",
+    "type": "ebs_volume",
+    "region": "us-west-2",
+    "monthly_cost": 76.73,
+    "created_at": "2024-08-18T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "environment": "production",
+      "owner": "team-backend",
+      "data_sensitivity": "medium"
+    },
+    "attached_to": "i-40671",
+    "state": "in-use",
+    "last_attached_days_ago": null,
+    "volume_type": "st1",
+    "size_gb": 100,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": false,
+    "kms_key_id": null,
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "sg-0083",
+    "name": "sg-custom-0083",
+    "type": "security_group",
+    "region": "eu-west-1",
+    "monthly_cost": 0.0,
+    "created_at": "2025-07-02T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "staging",
+      "owner": "team-infra",
+      "data_sensitivity": "high"
+    },
+    "vpc_id": "vpc-68493",
+    "description": "web tier",
+    "inbound_rules": [
+      {
+        "from_port": 27017,
+        "to_port": 27017,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 3389,
+        "to_port": 3389,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": "Allow port 3389"
+      },
+      {
+        "from_port": 443,
+        "to_port": 443,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": "Allow port 443"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [],
+    "is_unused": true
+  },
+  {
+    "id": "s3-0011",
+    "name": "bucket-reports-0011",
+    "type": "s3_bucket",
+    "region": "ap-south-1",
+    "monthly_cost": 65.7,
+    "created_at": "2025-02-08T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "development",
+      "data_sensitivity": "high"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "AES256",
+    "versioning_enabled": true,
+    "mfa_delete_enabled": true,
+    "logging_enabled": true,
+    "ssl_requests_only": false,
+    "size_gb": 107.9,
+    "object_count": 3275096,
+    "storage_class": "INTELLIGENT_TIERING",
+    "last_accessed_days_ago": 232
+  },
+  {
+    "id": "sg-0007",
+    "name": "sg-custom-0007",
+    "type": "security_group",
+    "region": "us-east-1",
+    "monthly_cost": 0.0,
+    "created_at": "2025-12-28T04:47:07Z",
+    "tags": {
+      "project": "beta",
+      "owner": "team-infra",
+      "data_sensitivity": "medium"
+    },
+    "vpc_id": "vpc-73699",
+    "description": "default VPC security group",
+    "inbound_rules": [
+      {
+        "from_port": 27017,
+        "to_port": 27017,
+        "protocol": "tcp",
+        "cidr_ipv4": "192.168.0.0/16",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 3389,
+        "to_port": 3389,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": "RDP access"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": true,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-84364"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "sg-0082",
+    "name": "sg-custom-0082",
+    "type": "security_group",
+    "region": "ap-southeast-1",
+    "monthly_cost": 0.0,
+    "created_at": "2026-02-20T04:47:07Z",
+    "tags": {
+      "project": "alpha",
+      "owner": "team-backend",
+      "data_sensitivity": "high"
+    },
+    "vpc_id": "vpc-89310",
+    "description": "web tier",
+    "inbound_rules": [
+      {
+        "from_port": 5432,
+        "to_port": 5432,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 3389,
+        "to_port": 3389,
+        "protocol": "tcp",
+        "cidr_ipv4": "172.16.0.0/12",
+        "cidr_ipv6": null,
+        "description": "Allow port 3389"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-57467",
+      "i-60181"
+    ],
+    "is_unused": false
+  },
+  {
+    "id": "vol-0097",
+    "type": "ebs_volume",
+    "region": "eu-west-1",
+    "monthly_cost": 98.56,
+    "created_at": "2024-08-29T04:47:07Z",
+    "tags": {
+      "project": "gamma",
+      "environment": "production",
+      "owner": "team-backend",
+      "data_sensitivity": "low"
+    },
+    "attached_to": null,
+    "state": "available",
+    "last_attached_days_ago": 140,
+    "volume_type": "st1",
+    "size_gb": 50,
+    "iops": null,
+    "throughput_mbps": null,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:us-east-1:123456789012:key/mrk-9899",
+    "snapshot_id": null,
+    "multi_attach_enabled": false,
+    "delete_on_termination": false
+  },
+  {
+    "id": "s3-0041",
+    "name": "bucket-reports-0041",
+    "type": "s3_bucket",
+    "region": "ap-south-1",
+    "monthly_cost": 191.17,
+    "created_at": "2024-11-07T04:47:07Z",
+    "tags": {
+      "environment": "production",
+      "owner": "team-backend",
+      "data_sensitivity": "low"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": "AES256",
+    "versioning_enabled": false,
+    "mfa_delete_enabled": false,
+    "logging_enabled": true,
+    "ssl_requests_only": true,
+    "size_gb": 23500.6,
+    "object_count": 3425473,
+    "storage_class": "INTELLIGENT_TIERING",
+    "last_accessed_days_ago": 164
+  },
+  {
+    "id": "s3-0036",
+    "name": "bucket-logs-0036",
+    "type": "s3_bucket",
+    "region": "us-west-2",
+    "monthly_cost": 192.09,
+    "created_at": "2024-11-08T04:47:07Z",
+    "tags": {
+      "project": "gamma"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": null,
+    "versioning_enabled": true,
+    "mfa_delete_enabled": false,
+    "logging_enabled": false,
+    "ssl_requests_only": false,
+    "size_gb": 14217.0,
+    "object_count": 4015746,
+    "storage_class": "GLACIER",
+    "last_accessed_days_ago": 174
+  },
+  {
+    "id": "s3-0096",
+    "name": "bucket-logs-0096",
+    "type": "s3_bucket",
+    "region": "us-west-2",
+    "monthly_cost": 169.14,
+    "created_at": "2024-05-16T04:47:07Z",
+    "tags": {
+      "project": "delta",
+      "environment": "production",
+      "owner": "team-data",
+      "data_sensitivity": "high"
+    },
+    "is_public": false,
+    "public_access_block": true,
+    "acl": "private",
+    "encryption": null,
+    "versioning_enabled": true,
+    "mfa_delete_enabled": false,
+    "logging_enabled": false,
+    "ssl_requests_only": true,
+    "size_gb": 47834.3,
+    "object_count": 3855938,
+    "storage_class": "INTELLIGENT_TIERING",
+    "last_accessed_days_ago": 279
+  },
+  {
+    "id": "sg-0025",
+    "name": "sg-custom-0025",
+    "type": "security_group",
+    "region": "ap-south-1",
+    "monthly_cost": 0.0,
+    "created_at": "2026-01-21T04:47:07Z",
+    "tags": {
+      "project": "beta",
+      "environment": "staging",
+      "owner": "team-ml",
+      "data_sensitivity": "medium"
+    },
+    "vpc_id": "vpc-37110",
+    "description": "db tier",
+    "inbound_rules": [
+      {
+        "from_port": 6379,
+        "to_port": 6379,
+        "protocol": "tcp",
+        "cidr_ipv4": "172.16.0.0/12",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 27017,
+        "to_port": 27017,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": null
+      },
+      {
+        "from_port": 3306,
+        "to_port": 3306,
+        "protocol": "tcp",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": null,
+        "description": "Allow port 3306"
+      },
+      {
+        "from_port": 3306,
+        "to_port": 3306,
+        "protocol": "tcp",
+        "cidr_ipv4": "10.0.0.0/8",
+        "cidr_ipv6": null,
+        "description": "Allow port 3306"
+      }
+    ],
+    "outbound_rules": [
+      {
+        "from_port": 0,
+        "to_port": 65535,
+        "protocol": "-1",
+        "cidr_ipv4": "0.0.0.0/0",
+        "cidr_ipv6": "::/0",
+        "description": "Allow all outbound"
+      }
+    ],
+    "has_open_ssh": false,
+    "has_open_rdp": false,
+    "allows_all_traffic_inbound": false,
+    "attached_to_instances": [
+      "i-81121",
+      "i-71069"
+    ],
+    "is_unused": false
+  }
+]
